@@ -1,21 +1,21 @@
 package classes;
 
 public class Misson {
-    private Double rewardToAccept;
-    private Double rewardToComplete;
+    private int rewardToAccept;
+    private int rewardToComplete;
     private String goal;
 
-    public Misson(Double rewardToAccept, Double rewardToComplete, String goal) {
+    public Misson(int rewardToAccept, int rewardToComplete, String goal) {
         this.rewardToAccept = rewardToAccept;
         this.rewardToComplete = rewardToComplete;
         this.goal = goal;
     }
 
-    public Double getRewardToAccept() {
+    public int getRewardToAccept() {
         return rewardToAccept;
     }
 
-    public Double getRewardToComplete() {
+    public int getRewardToComplete() {
         return rewardToComplete;
     }
 
