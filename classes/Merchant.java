@@ -3,9 +3,9 @@ package classes;
 public class Merchant {
     private String[] questions;
     private City city;
-    private Double coins;
+    private int coins;
     
-    public Merchant(String[] questions, City city, Double coins) {
+    public Merchant(String[] questions, City city, int coins) {
         this.questions = questions;
         this.city = city;
         this.coins = coins;
@@ -19,7 +19,7 @@ public class Merchant {
         return city;
     }
 
-    public Double getCoins() {
+    public int getCoins() {
         return coins;
     }
 
