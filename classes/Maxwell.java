@@ -5,6 +5,7 @@ public class Maxwell {
     private Double power;
     private Misson currentMisson;
     private City currentCity;
+    private String goal;
 
     public Double getTravelCoins() {
         return travelCoins;
@@ -38,6 +39,10 @@ public class Maxwell {
         this.currentCity = currentCity;
     }
 
+    public String getGoal() {
+        return goal;
+    }
+
     public void travel() {
         System.out.println("Time to travel!");
     }
@@ -45,4 +50,5 @@ public class Maxwell {
     public void die() {
         System.out.println("Game Over!");
     }
+
 }
