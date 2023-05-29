@@ -2,10 +2,10 @@ package classes;
 
 public class Menu {
     public void startMenu() {
-        System.out.println("===== SEJA BEM VINDO, AVENTUREIRO !!! =====");
-        System.out.println("Escolha uma opção:");
-        System.out.println("1. Iniciar Aventura");
-        System.out.println("2. Sair do Jogo");
+        System.out.println("===== WELCOME, ADVENTURER !!! =====");
+        System.out.println("<< Chose an option >>");
+        System.out.println("1. Start Adventure");
+        System.out.println("2. Exit");
     }
 
     public void gameOverScreen() {
@@ -13,9 +13,9 @@ public class Menu {
         System.out.println("1 - RESTART  | 2 - EXIT");
     }
 
-    public void gameOverConsfirm() {
+    public void gameOverConfirm() {
         System.out.println("======== DO YOU WISH TO LEAVE ? ========");
-        System.out.println("1 - SIM  | 2 - NAO");
+        System.out.println("1 - YES  | 2 - NO");
     }
 
     
