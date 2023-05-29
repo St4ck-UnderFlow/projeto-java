@@ -1,25 +1,25 @@
 package classes;
 
 public class Maxwell {
-    private Double travelCoins;
-    private Double power;
+    private int travelCoins;
+    private int power;
     private Misson currentMisson;
     private City currentCity;
     private String goal;
 
-    public Double getTravelCoins() {
+    public int getTravelCoins() {
         return travelCoins;
     }
 
-    public void setTravelCoins(Double travelCoins) {
+    public void setTravelCoins(int travelCoins) {
         this.travelCoins = travelCoins;
     }
 
-    public Double getPower() {
+    public int getPower() {
         return power;
     }
 
-    public void setPower(Double power) {
+    public void setPower(int power) {
         this.power = power;
     }
 
