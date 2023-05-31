@@ -2,17 +2,19 @@ package classes;
 
 public class City {
     private String name;
-    private String[] nearByCities;
+    private String[] nearbyCities;
     public boolean hasMission;
     public boolean alreadyVisited;
     private String[] rules;
+    private Merchant merchant;
 
-    public City(String name, String[] nearByCities, boolean hasMission, boolean alreadyVisited, String[] rules) {
+    public City(String name, String[] nearbyCities, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant) {
         this.name = name;
-        this.nearByCities = nearByCities;
+        this.nearbyCities = nearbyCities;
         this.hasMission = hasMission;
         this.alreadyVisited = alreadyVisited;
         this.rules = rules;
+        this.merchant = merchant;
     }
 
     public String getName() {
@@ -23,8 +25,12 @@ public class City {
         this.name = name;
     }
 
-    public String[] getNearByCities() {
-        return nearByCities;
+    public Merchant getMerchant() {
+        return merchant;
+    }
+
+    public String[] getNearbyCities() {
+        return nearbyCities;
     }
 
     public String[] getRules() {
