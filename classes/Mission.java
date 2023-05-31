@@ -1,11 +1,11 @@
 package classes;
 
-public class Misson {
+public class Mission {
     private int rewardToAccept;
     private int rewardToComplete;
     private String goal;
 
-    public Misson(int rewardToAccept, int rewardToComplete, String goal) {
+    public Mission(int rewardToAccept, int rewardToComplete, String goal) {
         this.rewardToAccept = rewardToAccept;
         this.rewardToComplete = rewardToComplete;
         this.goal = goal;

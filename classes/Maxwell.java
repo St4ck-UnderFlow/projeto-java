@@ -3,7 +3,7 @@ package classes;
 public class Maxwell {
     private int travelCoins;
     private int power;
-    private Misson currentMisson;
+    private Mission currentMisson;
     private City currentCity;
     private String goal;
 
@@ -23,11 +23,11 @@ public class Maxwell {
         this.power = power;
     }
 
-    public Misson getCurrentMisson() {
+    public Mission getCurrentMisson() {
         return currentMisson;
     }
 
-    public void setCurrentMisson(Misson currentMisson) {
+    public void setCurrentMisson(Mission currentMisson) {
         this.currentMisson = currentMisson;
     }
 
