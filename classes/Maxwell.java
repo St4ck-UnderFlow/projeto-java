@@ -5,7 +5,7 @@ public class Maxwell {
     private int power;
     private Mission currentMisson;
     private City currentCity;
-    private String goal;
+    private String goal = "Getting to the town of Nargumun";
 
     public int getTravelCoins() {
         return travelCoins;
