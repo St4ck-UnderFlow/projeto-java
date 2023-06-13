@@ -1,14 +1,20 @@
 package classes;
+import java.util.ArrayList;
 
 public class Map {
-    private City[] cities;
+    private ArrayList<City> cities;
+
+    
+    public Map(ArrayList<City> cities) {
+        this.cities = new ArrayList<>();
+    }
 
     public void addCity(City city) {
-        int lastPosition = this.cities.length;
-        this.cities[lastPosition] = city;
+        this.cities.add(city);;
     }
 
-    public City[] getCities() {
+    public ArrayList<City> getCities() {
         return cities;
     }
+    
 }
