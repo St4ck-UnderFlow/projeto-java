@@ -141,6 +141,7 @@ public class Game {
     }
 
     public void addCitiesWithFrontiersOnMap() {
+        // this function must to be called before addNearbyCitiesFrontiers() function
         this.citiesWithFrontiers.add(this.ubub);
         this.citiesWithFrontiers.add(this.nekika);
         this.citiesWithFrontiers.add(this.legmod);
