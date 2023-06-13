@@ -1,6 +1,11 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Game {
+
+    private ArrayList<City> citiesWithFrontiers = new ArrayList<>();
+
     private City ubub = new City("Ubub",false, false, null, null);
 
     private City nekika = new City("Nekika", false, false, null, null);
@@ -133,5 +138,25 @@ public class Game {
         // Frontier Kasya
         this.kasya.addNerabyCity(this.chandirSultanate);
         
+    }
+
+    public void addCitiesWithFrontiersOnMap() {
+        this.citiesWithFrontiers.add(this.ubub);
+        this.citiesWithFrontiers.add(this.nekika);
+        this.citiesWithFrontiers.add(this.legmod);
+        this.citiesWithFrontiers.add(this.gritestar);
+        this.citiesWithFrontiers.add(this.drogove);
+        this.citiesWithFrontiers.add(this.lastwatch);
+        this.citiesWithFrontiers.add(this.smalia);
+        this.citiesWithFrontiers.add(this.oldcalia);
+        this.citiesWithFrontiers.add(this.defalsia);
+        this.citiesWithFrontiers.add(this.kalb);
+        this.citiesWithFrontiers.add(this.aymarLeague);
+        this.citiesWithFrontiers.add(this.vuneseEmpire);
+        this.citiesWithFrontiers.add(this.karhora);
+        this.citiesWithFrontiers.add(this.nargumun);
+        this.citiesWithFrontiers.add(this.bun);
+        this.citiesWithFrontiers.add(this.chandirSultanate);
+        this.citiesWithFrontiers.add(this.kasya);
     }
 }
