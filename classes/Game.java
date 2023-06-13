@@ -41,7 +41,9 @@ public class Game {
     private City kasya = new City("Kasya", false, false, null, null);
         
     public Game() {
-        
+        System.err.println("estrou no game");
+        addNearbyCitiesFrontiers();
+        addCitiesWithFrontiersOnMap();
     }
 
     public void addNearbyCitiesFrontiers() {
@@ -159,5 +161,7 @@ public class Game {
         this.citiesWithFrontiers.add(this.bun);
         this.citiesWithFrontiers.add(this.chandirSultanate);
         this.citiesWithFrontiers.add(this.kasya);
+
+        Map map = new Map(this.citiesWithFrontiers);
     }
 }
