@@ -34,4 +34,8 @@ public class City {
     public String[] getRules() {
         return rules;
     }
+
+    public void addNerabyCity(City city) {
+        this.nearbyCities.add(city);
+    }
 }
