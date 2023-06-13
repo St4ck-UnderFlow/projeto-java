@@ -1,16 +1,18 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class City {
     private String name;
-    private City[] nearbyCities;
+    private ArrayList<City> nearbyCities;
     public boolean hasMission;
     public boolean alreadyVisited;
     private String[] rules;
     private Merchant merchant;
 
-    public City(String name, City[] nearbyCities, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant) {
+    public City(String name, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant) {
         this.name = name;
-        this.nearbyCities = nearbyCities;
+        this.nearbyCities = new ArrayList<>();
         this.hasMission = hasMission;
         this.alreadyVisited = alreadyVisited;
         this.rules = rules;
@@ -21,15 +23,11 @@ public class City {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Merchant getMerchant() {
         return merchant;
     }
 
-    public City[] getNearbyCities() {
+    public ArrayList<City> getNearbyCities() {
         return nearbyCities;
     }
 
