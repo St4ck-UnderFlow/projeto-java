@@ -37,6 +37,10 @@ public class City {
         return rules;
     }
 
+    public int getTravelCoinsNeeded() {
+        return this.getTravelCoinsNeeded();
+    }
+
     public void addNerabyCity(City city) {
         this.nearbyCities.add(city);
     }
