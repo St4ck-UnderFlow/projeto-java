@@ -9,6 +9,7 @@ public class City {
     public boolean alreadyVisited;
     private String[] rules;
     private Merchant merchant;
+    private int travelCoinsNeeded;
 
     public City(String name, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant) {
         this.name = name;
@@ -17,6 +18,7 @@ public class City {
         this.alreadyVisited = alreadyVisited;
         this.rules = rules;
         this.merchant = merchant;
+        this.travelCoinsNeeded = 1;
     }
 
     public String getName() {
