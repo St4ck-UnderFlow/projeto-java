@@ -8,8 +8,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Menu menu = new Menu();
-        Maxwell maxwell = new Maxwell();
-        Game game;
+        Game game = new Game();
+
+        Maxwell maxwell = new Maxwell(game.ubud);
 
         boolean validInput = true;
         
@@ -18,7 +19,7 @@ public class Main {
             int option = input.nextInt();
             switch(option) {
                 case 1:
-                    game = new Game();
+                    game.startGame();
                     menu.defaultMenu(maxwell);
                     menu.optionsMenu(maxwell);
                     validInput = false;

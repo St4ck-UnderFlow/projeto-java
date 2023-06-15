@@ -33,12 +33,12 @@ public class Menu {
 
         clearTerminal();
 
-        System.out.println("=== Welcome to " + maxwell.getCurrentCity() + " ===");
+        System.out.println("=== Welcome to " + maxwell.getCurrentCity().getName() + " ===");
         System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
         System.out.println("Quantidade de poder => " + maxwell.getPower());  
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
         System.err.println("=======================================");
-        System.out.println("Cidade Atual => " + maxwell.getCurrentCity());
+        System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
         System.out.println("Missao Atual => " + maxwell.getCurrentMisson());
         System.out.println("=======================================");
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());

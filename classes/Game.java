@@ -6,41 +6,45 @@ public class Game {
 
     private ArrayList<City> citiesWithFrontiers = new ArrayList<>();
 
-    private City ubub = new City("Ubub",false, false, null, null);
+    public City ubud = new City("Ubud",false, false, null, null);
 
-    private City nekika = new City("Nekika", false, false, null, null);
+    public City nekika = new City("Nekika", false, false, null, null);
 
-    private City legmod = new City("Legmod", false, false, null, null);
+    public City legmod = new City("Legmod", false, false, null, null);
 
-    private City gritestar = new City("Gritestar", false, false, null, null);
+    public City gritestar = new City("Gritestar", false, false, null, null);
 
-    private City drogove = new City("Dogrove", false, false, null, null);
+    public City drogove = new City("Dogrove", false, false, null, null);
 
-    private City oldcalia = new City("Oldcalia", false, false, null, null);
+    public City oldcalia = new City("Oldcalia", false, false, null, null);
 
-    private City lastwatch = new City("Lastwatch", false, false, null, null);
+    public City lastwatch = new City("Lastwatch", false, false, null, null);
 
-    private City smalia = new City("Smalia", false, false, null, null);
+    public City smalia = new City("Smalia", false, false, null, null);
 
-    private City defalsia = new City("Defalsia", true, false, null, null);
+    public City defalsia = new City("Defalsia", true, false, null, null);
 
-    private City aymarLeague = new City("Aymar League", true, false, null, null);
+    public City aymarLeague = new City("Aymar League", true, false, null, null);
 
-    private City kalb = new City("Kalb", false, false, null, null);
+    public City kalb = new City("Kalb", false, false, null, null);
 
-    private City vuneseEmpire = new City("Vunese Empire", true, false, null, null);
+    public City vuneseEmpire = new City("Vunese Empire", true, false, null, null);
 
-    private City karhora = new City("Karhora", false, false, null, null);
+    public City karhora = new City("Karhora", false, false, null, null);
 
-    private City nargumun = new City("Nargumun", true, false, null, null);
+    public City nargumun = new City("Nargumun", true, false, null, null);
 
-    private City bun = new City("Bun", true, false, null, null);
+    public City bun = new City("Bun", true, false, null, null);
 
-    private City chandirSultanate = new City("Chandir Sultanate", false, false, null, null);
+    public City chandirSultanate = new City("Chandir Sultanate", false, false, null, null);
 
-    private City kasya = new City("Kasya", false, false, null, null);
+    public City kasya = new City("Kasya", false, false, null, null);
         
     public Game() {
+        
+    }
+
+    public void startGame() {
         addNearbyCitiesFrontiers();
         addCitiesWithFrontiersOnMap();
     }
@@ -48,16 +52,16 @@ public class Game {
     public void addNearbyCitiesFrontiers() {
         
         // Frontier Ubud
-        this.ubub.addNerabyCity(this.legmod);
-        this.ubub.addNerabyCity(this.nekika);
+        this.ubud.addNerabyCity(this.legmod);
+        this.ubud.addNerabyCity(this.nekika);
 
         // Frontier Nekika
         this.nekika.addNerabyCity(this.legmod);
         this.nekika.addNerabyCity(this.gritestar);
-        this.nekika.addNerabyCity(this.ubub);
+        this.nekika.addNerabyCity(this.ubud);
 
         // Frontier Legmod
-        this.legmod.addNerabyCity(this.ubub);
+        this.legmod.addNerabyCity(this.ubud);
         this.legmod.addNerabyCity(this.nekika);
         this.legmod.addNerabyCity(this.gritestar);
         this.legmod.addNerabyCity(this.drogove);
@@ -143,7 +147,7 @@ public class Game {
 
     public void addCitiesWithFrontiersOnMap() {
         // this function must be called before addNearbyCitiesFrontiers() function
-        this.citiesWithFrontiers.add(this.ubub);
+        this.citiesWithFrontiers.add(this.ubud);
         this.citiesWithFrontiers.add(this.nekika);
         this.citiesWithFrontiers.add(this.legmod);
         this.citiesWithFrontiers.add(this.gritestar);
