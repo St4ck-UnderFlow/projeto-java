@@ -18,6 +18,7 @@ public class Main {
             case 1:
                 game = new Game();
                 menu.defaultMenu(maxwell);
+                menu.optionsMenu(maxwell);
                 break;
             case 2:
                 System.out.println("Leaving So Soon ???");
