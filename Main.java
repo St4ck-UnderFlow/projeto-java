@@ -18,6 +18,7 @@ public class Main {
             case 1:
                 System.out.println("game started");
                 game = new Game();
+                menu.defaultMenu(maxwell);
                 break;
             case 2:
                 System.out.println("goodbye");
