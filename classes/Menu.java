@@ -3,6 +3,7 @@ package classes;
 
 public class Menu {
     public void startMenu() {
+        // Menu Screen | can start the game or leave 
         System.out.println("===== WELCOME, ADVENTURER !!! =====");
         System.out.println("<< Chose an option >>");
         System.out.println("1. Start Adventure");
@@ -10,11 +11,13 @@ public class Menu {
     }
 
     public void gameOverScreen() {
+        // death screen | if restart, resets the game, if not, leaves
         System.out.println("======== GAME OVER ========");
         System.out.println("1 - RESTART  | 2 - EXIT");
     }
 
     public void gameOverConfirm() {
+        // Confirmation to leave the game
         System.out.println("======== DO YOU WISH TO LEAVE ? ========");
         System.out.println("1 - YES  | 2 - NO");
     }
