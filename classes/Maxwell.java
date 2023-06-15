@@ -4,13 +4,16 @@ public class Maxwell {
     private int travelCoins;
     private int power;
     private Mission currentMisson;
-    private City currentCity;
+    private String currentCity;
     private String goal;
-    private int currentPower;
-    private int maximumPower;
+    private int currentThreshold;
+    private int maximumThreshold;
 
     public Maxwell() {
         this.goal = "Getting to the town of Nargumun";
+        this.power = 0;
+        this.currentThreshold = 7;
+        this.currentCity = "Ubud";
     }
 
     public int getTravelCoins() {
@@ -37,11 +40,11 @@ public class Maxwell {
         this.currentMisson = currentMisson;
     }
 
-    public City getCurrentCity() {
+    public String getCurrentCity() {
         return currentCity;
     }
 
-    public void setCurrentCity(City currentCity) {
+    public void setCurrentCity(String currentCity) {
         this.currentCity = currentCity;
     }
 
@@ -57,21 +60,20 @@ public class Maxwell {
         System.out.println("Game Over!");
     }
 
-    public int getCurrentPower() {
-        return currentPower;
+    public int getCurrentThreshold() {
+        return currentThreshold;
     }
 
-    public void setCurrentPower(int standartPower) {
-        this.currentPower = standartPower;
+    public void setCurrentThreshold(int currentThreshold) {
+        this.currentThreshold = currentThreshold;
     }
 
-    public int getMaximumPower() {
-        return maximumPower;
+    public int getMaximumThreshold() {
+        return maximumThreshold;
     }
 
-    public void setMaximumPower(int maximumPower) {
-        this.maximumPower = maximumPower;
+    public void setMaximumThreshold(int maximumThreshold) {
+        this.maximumThreshold = maximumThreshold;
     }
 
-    
 }
