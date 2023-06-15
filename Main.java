@@ -16,12 +16,11 @@ public class Main {
         int option = input.nextInt();
         switch(option) {
             case 1:
-                System.out.println("game started");
                 game = new Game();
                 menu.defaultMenu(maxwell);
                 break;
             case 2:
-                System.out.println("goodbye");
+                System.out.println("Leaving So Soon ???");
                 break; 
             default:
                 input.close();

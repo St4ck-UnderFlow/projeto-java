@@ -41,7 +41,6 @@ public class Game {
     private City kasya = new City("Kasya", false, false, null, null);
         
     public Game() {
-        System.err.println("estrou no game");
         addNearbyCitiesFrontiers();
         addCitiesWithFrontiersOnMap();
     }
