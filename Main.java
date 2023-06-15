@@ -11,7 +11,7 @@ public class Main {
         Game game = new Game();
 
         Maxwell maxwell = new Maxwell(game.ubud);
-        
+
         boolean validInput = true;
         
         while(validInput){
@@ -20,7 +20,6 @@ public class Main {
             switch(option) {
                 case 1:
                     game.startGame();
-                    menu.defaultMenu(maxwell);
                     menu.optionsMenu(maxwell);
                     validInput = false;
                     break;

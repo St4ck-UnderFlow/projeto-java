@@ -51,6 +51,7 @@ public class Menu {
         boolean validOption = true;
 
         while (validOption) {
+            defaultMenu(maxwell);
             System.out.println("++++++++++++++++++++++++++++++");
             System.out.println("[1] Viajar");
             System.out.println("[2] Sair do jogo");
@@ -67,6 +68,7 @@ public class Menu {
                 System.exit(0);
                 validOption = false;
             } else {
+                clearTerminal();
                 System.out.println("invalid value, please type a correct one");
             }
         }
