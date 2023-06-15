@@ -6,6 +6,8 @@ public class Maxwell {
     private Mission currentMisson;
     private City currentCity;
     private String goal;
+    private int currentPower;
+    private int maximumPower;
 
     public Maxwell() {
         this.goal = "Getting to the town of Nargumun";
@@ -55,4 +57,21 @@ public class Maxwell {
         System.out.println("Game Over!");
     }
 
+    public int getCurrentPower() {
+        return currentPower;
+    }
+
+    public void setCurrentPower(int standartPower) {
+        this.currentPower = standartPower;
+    }
+
+    public int getMaximumPower() {
+        return maximumPower;
+    }
+
+    public void setMaximumPower(int maximumPower) {
+        this.maximumPower = maximumPower;
+    }
+
+    
 }
