@@ -23,7 +23,11 @@ public class Main {
                 System.out.println("Leaving So Soon ???");
                 break; 
             default:
-                input.close();
+                System.out.println("This option does not exist, please type the right ones");
+                
+
+                
+
         }
     }
 }
