@@ -10,8 +10,9 @@ public class City {
     private String[] rules;
     private Merchant merchant;
     private int travelCoinsNeeded;
+    private int powerUp;
 
-    public City(String name, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant) {
+    public City(String name, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant, int powerUp) {
         this.name = name;
         this.nearbyCities = new ArrayList<>();
         this.hasMission = hasMission;
@@ -19,6 +20,7 @@ public class City {
         this.rules = rules;
         this.merchant = merchant;
         this.travelCoinsNeeded = 1;
+        this.powerUp = powerUp;
     }
 
     public String getName() {

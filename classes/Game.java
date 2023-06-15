@@ -6,39 +6,39 @@ public class Game {
 
     private ArrayList<City> citiesWithFrontiers = new ArrayList<>();
 
-    public City ubud = new City("Ubud",false, false, null, null);
+    public City ubud = new City("Ubud",false, false, null, null, 0);
 
-    public City nekika = new City("Nekika", false, false, null, null);
+    public City nekika = new City("Principality of Nekikh", false, false, null, null, 1);
 
-    public City legmod = new City("Legmod", false, false, null, null);
+    public City legmod = new City("Kingdom of Legmod", false, false, null, null, 2);
 
-    public City gritestar = new City("Gritestar", false, false, null, null);
+    public City gritestar = new City("Principality of Gritesthr", false, false, null, null, 5);
 
-    public City drogove = new City("Dogrove", false, false, null, null);
+    public City drogove = new City("Protectorate of Dogrove", false, false, null, null, 3);
 
-    public City oldcalia = new City("Oldcalia", false, false, null, null);
+    public City oldcalia = new City("Kingdom of Oldcalia", false, false, null, null, 4);
 
-    public City lastwatch = new City("Lastwatch", false, false, null, null);
+    public City lastwatch = new City("Kingdom of Lastwatch", false, false, null, null, -2);
 
-    public City smalia = new City("Smalia", false, false, null, null);
+    public City smalia = new City("Grand Duchy of Smalia", false, false, null, null, 1);
 
-    public City defalsia = new City("Defalsia", true, false, null, null);
+    public City defalsia = new City("Defalsia", true, false, null, null, -3);
 
-    public City aymarLeague = new City("Aymar League", true, false, null, null);
+    public City aymarLeague = new City("Aymar League", true, false, null, null, 1);
 
-    public City kalb = new City("Kalb", false, false, null, null);
+    public City kalb = new City("Kingdom of Kalb", false, false, null, null, 2);
 
-    public City vuneseEmpire = new City("Vunese Empire", true, false, null, null);
+    public City vuneseEmpire = new City("Vunese of Empire", true, false, null, null, 0);
 
-    public City karhora = new City("Karhora", false, false, null, null);
+    public City karhora = new City("Principality of Karhora", false, false, null, null, -2);
 
-    public City nargumun = new City("Nargumun", true, false, null, null);
+    public City nargumun = new City("Nargumun", true, false, null, null, 0);
 
-    public City bun = new City("Bun", true, false, null, null);
+    public City bun = new City("Bun", true, false, null, null, 5);
 
-    public City chandirSultanate = new City("Chandir Sultanate", false, false, null, null);
+    public City chandirSultanate = new City("Chandir Sultanate", false, false, null, null, 1);
 
-    public City kasya = new City("Kasya", false, false, null, null);
+    public City kasya = new City("Principality of Kasya", false, false, null, null, -7);
         
     public Game() {
         
