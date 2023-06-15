@@ -10,25 +10,28 @@ public class Main {
         Menu menu = new Menu();
         Maxwell maxwell = new Maxwell();
         Game game;
-    
-        menu.startMenu();
 
-        int option = input.nextInt();
-        switch(option) {
-            case 1:
-                game = new Game();
-                menu.defaultMenu(maxwell);
-                menu.optionsMenu(maxwell);
-                break;
-            case 2:
-                System.out.println("Leaving So Soon ???");
-                break; 
-            default:
-                System.out.println("This option does not exist, please type the right ones");
-                
-
-                
-
+        boolean validInput = true;
+        
+        while(validInput){
+            menu.startMenu();
+            int option = input.nextInt();
+            switch(option) {
+                case 1:
+                    game = new Game();
+                    menu.defaultMenu(maxwell);
+                    menu.optionsMenu(maxwell);
+                    validInput = false;
+                    break;
+                case 2:
+                    System.out.println("Leaving So Soon ???");
+                    validInput = false;
+                    break; 
+                default:
+                    menu.clearTerminal();
+                    System.out.println("This option does not exist, please type the right ones");
+                    break;
+            }
         }
     }
 }
