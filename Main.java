@@ -11,7 +11,7 @@ public class Main {
         Game game = new Game();
 
         Maxwell maxwell = new Maxwell(game.ubud);
-
+        
         boolean validInput = true;
         
         while(validInput){

@@ -47,23 +47,29 @@ public class Menu {
     public void optionsMenu(Maxwell maxwell) {
 
         Scanner input = new Scanner(System.in);
+        
+        boolean validOption = true;
 
-        System.out.println("++++++++++++++++++++++++++++++");
-        System.out.println("[1] Viajar");
-        System.out.println("[2] Sair do jogo");
-        System.out.println("++++++++++++++++++++++++++++++");
+        while (validOption) {
+            System.out.println("++++++++++++++++++++++++++++++");
+            System.out.println("[1] Viajar");
+            System.out.println("[2] Sair do jogo");
+            System.out.println("++++++++++++++++++++++++++++++");
 
-        int option = input.nextInt();
+            int option = input.nextInt();
 
-
-        if (option == 1) {
-            maxwell.travel();
-        } else if (option == 2) {
-            clearTerminal();
-            System.out.println("goodbye");
-            System.exit(0);
+            if (option == 1) {
+                maxwell.travel();
+                validOption = false;
+            } else if (option == 2) {
+                clearTerminal();
+                System.out.println("goodbye");
+                System.exit(0);
+                validOption = false;
+            } else {
+                System.out.println("invalid value, please type a correct one");
+            }
         }
-
         input.close();
     }
     
