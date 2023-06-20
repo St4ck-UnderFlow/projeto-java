@@ -7,7 +7,6 @@ public class Maxwell {
     private City currentCity;
     private String goal;
     private int currentThreshold;
-    private int maximumThreshold;
 
     public Maxwell() {
         this.goal = "Chegar até a cidade de Nargumun"; // The Main Objective of Maxwell's Journey
@@ -66,14 +65,6 @@ public class Maxwell {
 
     public void setCurrentThreshold(int currentThreshold) {
         this.currentThreshold = currentThreshold;
-    }
-
-    public int getMaximumThreshold() {
-        return maximumThreshold;
-    }
-
-    public void setMaximumThreshold(int maximumThreshold) {
-        this.maximumThreshold = maximumThreshold;
     }
 
 }

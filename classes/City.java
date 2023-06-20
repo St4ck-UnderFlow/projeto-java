@@ -40,4 +40,9 @@ public class City {
     public String[] getRules() {
         return rules;
     }
+
+    public int getPowerUp() {
+        return powerUp;
+    }
+
 }

@@ -89,6 +89,15 @@ public class Game {
             // users options start with 1 and the array`indexs start with 0
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
+
+            powerSync(this.maxwell.getCurrentCity().getPowerUp());
+            int currentPower = this.maxwell.getPower();
+
+            if(currentPower > this.maxwell.getCurrentThreshold()) {
+                System.out.println("Limiar máximo ultrapassado");
+                System.exit(0);
+            } 
+    
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
         }
@@ -234,5 +243,11 @@ public class Game {
             }
         }
         input.close();
+    }
+
+    public void powerSync(int power) {
+        int currentPower = this.maxwell.getPower();
+        this.maxwell.setPower(currentPower + power);
+        System.out.println(currentPower + power);
     }
 }
