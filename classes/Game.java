@@ -41,10 +41,15 @@ public class Game {
     public City kasya = new City("Principality of Kasya", false, null, null, -7);
 
     public ArrayList<City> cities;
+    public Menu menu;
+    public Maxwell maxwell;
 
-    public Game() {
+    public Game(Maxwell maxwell) {
         this.cities = new ArrayList<>();
+        this.menu = new Menu();
         setCitiesArrayList();
+        this.maxwell = maxwell;
+        this.maxwell.setCurrentCity(this.ubud);
     }
 
     public void setCitiesArrayList() {
@@ -67,24 +72,27 @@ public class Game {
         this.cities.add(this.kasya);
     }
 
-    public void travel(Maxwell maxwell) {
+    public void travel() {
         Scanner input = new Scanner(System.in);
 
-        // system ask which city the player wants to go
+        menu.clearTerminal();
+        ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
+        menu.travelMenu(frontiers);
+
+        // system ask which city the player wants to goa
         System.out.println(" ");
         System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
         int cityIndexChoiceInput = input.nextInt();
 
         // users options start with 1 and the array`indexs start with 0
-        City cityChoose = this.cities.get(cityIndexChoiceInput - 1);
-        maxwell.setCurrentCity(cityChoose);
-
-        input.close();
+        Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput);
+        this.maxwell.setCurrentCity(frontierChoosen.getDestination());
+        
     }
 
-    public void startGame(Maxwell maxwell) {
+    public void startGame() {
         setFrontiers();
-        userOptions(maxwell);
+        userOptions(this.maxwell);
     }
 
     public void setFrontiers() {
@@ -185,23 +193,20 @@ public class Game {
 
     public void userOptions(Maxwell maxwell) {
 
-        Menu menu = new Menu();
         Scanner input = new Scanner(System.in);
         boolean validOption = true;
 
         while (validOption) {
-            menu.defaultMenu(maxwell);
+            menu.defaultMenu(this.maxwell);
             menu.optionsMenu();
             try {
                 int option = input.nextInt();
 
                 if (option == 1) {
-
                     // [1] Viajar
                     System.out.println(" ");
-                    menu.travelMenu(maxwell);
-                    travel(maxwell);
-                    validOption = false;
+                    travel();
+                    continue;
 
                 } else if (option == 2) {
 

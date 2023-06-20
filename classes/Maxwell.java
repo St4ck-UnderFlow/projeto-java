@@ -9,11 +9,10 @@ public class Maxwell {
     private int currentThreshold;
     private int maximumThreshold;
 
-    public Maxwell(City currentCity) {
+    public Maxwell() {
         this.goal = "Chegar até a cidade de Nargumun"; // The Main Objective of Maxwell's Journey
         this.power = 0; // The power Maxwell has currently (if this exceeds the currentThreshold, he dies)
         this.currentThreshold = 7; // The current threshold of Maxwell, it may change during his journey 
-        this.currentCity = currentCity; // Maxwell starting point
         this.travelCoins = 3; // Amount of coins Maxwell currently holds (he starts with 3 coins)
     }
 

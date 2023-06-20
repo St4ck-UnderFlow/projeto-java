@@ -10,8 +10,8 @@ public class Main {
         
         Scanner input = new Scanner(System.in);
         Menu menu = new Menu();
-        Game game = new Game();
-        Maxwell maxwell = new Maxwell(game.ubud);
+        Maxwell maxwell = new Maxwell();
+        Game game = new Game(maxwell);
 
         boolean validInput = true;
         
@@ -23,7 +23,7 @@ public class Main {
                 int option = input.nextInt();
                 switch(option) {
                     case 1:
-                        game.startGame(maxwell);
+                        game.startGame();
                         break;
                     case 2:
                         System.out.println("JÁ DESISTIU ???");

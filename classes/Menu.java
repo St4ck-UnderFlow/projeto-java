@@ -55,19 +55,18 @@ public class Menu {
         System.out.println("++++++++++++++++++++++++++++++");
     }
     
-    public void travelMenu(Maxwell maxwell) {
-        ArrayList<Frontier> frontiers = maxwell.getCurrentCity().getFrontiers();
-
+    public void travelMenu(ArrayList<Frontier> frontiers) {
+      
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
 
-        System.out.println("Cidade Atual => " + greenColorCode + maxwell.getCurrentCity().getName()+ resetColorCode);
+        // System.out.println("Cidade Atual => " + greenColorCode + maxwell.getCurrentCity().getName()+ resetColorCode);
 
         System.out.println(" ");
 
         System.out.println("+=== CIDADES FRONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {
-            System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
+            System.out.println(i +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
     }
 }

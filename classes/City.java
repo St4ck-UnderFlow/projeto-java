@@ -12,7 +12,7 @@ public class City {
 
     public City(String name, boolean hasMission, String[] rules, Merchant merchant, int powerUp) {
         this.name = name;
-        this.frontiers = new ArrayList<>();
+        this.frontiers = new ArrayList<Frontier>();
         this.hasMission = hasMission;
         this.rules = rules;
         this.merchant = merchant;
