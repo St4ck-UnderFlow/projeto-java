@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Game {
@@ -41,8 +42,6 @@ public class Game {
 
     public ArrayList<City> cities;
 
-    
-        
     public Game() {
         this.cities = new ArrayList<>();
         setCitiesArrayList();
@@ -83,8 +82,9 @@ public class Game {
         input.close();
     }
 
-    public void startGame() {
+    public void startGame(Maxwell maxwell) {
         setFrontiers();
+        userOptions(maxwell);
     }
 
     public void setFrontiers() {
@@ -181,5 +181,46 @@ public class Game {
         // Frontier Kasya
         this.kasya.addFrontier(this.chandirSultanate, 1);
         
+    }
+
+    public void userOptions(Maxwell maxwell) {
+
+        Menu menu = new Menu();
+        Scanner input = new Scanner(System.in);
+        boolean validOption = true;
+
+        while (validOption) {
+            menu.defaultMenu(maxwell);
+            menu.optionsMenu();
+            try {
+                int option = input.nextInt();
+
+                if (option == 1) {
+
+                    // [1] Viajar
+                    System.out.println(" ");
+                    menu.travelMenu(maxwell);
+                    travel(maxwell);
+                    validOption = false;
+
+                } else if (option == 2) {
+
+                    // [2] Sair do jogo
+                    menu.clearTerminal();
+                    System.out.println("OBRIGADO POR JOGAR NOSSO JOGUINHO, ATÉ MAIS :)");
+                    System.exit(0);
+                    validOption = false;
+
+                } else {
+                    menu.clearTerminal();
+                    System.out.println("Valor Invalido, digitar um valor adequado");
+                }
+
+            } catch(InputMismatchException error) {
+                input.next(); // Discard invalid input
+                continue;
+            }
+        }
+        input.close();
     }
 }

@@ -15,16 +15,15 @@ public class Main {
 
         boolean validInput = true;
         
+        
         while(validInput){
             menu.clearTerminal();
+            menu.startMenu();
             try {
-                menu.startMenu();
                 int option = input.nextInt();
                 switch(option) {
                     case 1:
-                        game.startGame();
-                        menu.optionsMenu(maxwell,game);
-                        validInput = false;
+                        game.startGame(maxwell);
                         break;
                     case 2:
                         System.out.println("JÁ DESISTIU ???");

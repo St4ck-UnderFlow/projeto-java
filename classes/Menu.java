@@ -1,8 +1,6 @@
 package classes;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 
 public class Menu {
     public void startMenu() {
@@ -50,43 +48,11 @@ public class Menu {
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
     }
 
-    public void optionsMenu(Maxwell maxwell, Game game) {
-
-        Scanner input = new Scanner(System.in);
-        boolean validOption = true;
-
-        while (validOption) {
-            try {
-                defaultMenu(maxwell);
-                System.out.println("++++++++++++++++++++++++++++++");
-                System.out.println("[1] Viajar");
-                System.out.println("[2] Sair do jogo");
-                System.out.println("++++++++++++++++++++++++++++++");
-
-                int option = input.nextInt();
-
-                if (option == 1) {
-                    // [1] Viajar
-                    System.out.println(" ");
-                    travelMenu(maxwell);
-                    game.travel(maxwell);
-                    validOption = false;
-                } else if (option == 2) {
-                    // [2] Sair do jogo
-                    clearTerminal();
-                    System.out.println("OBRIGADO POR JOGAR NOSSO JOGUINHO, ATÉ MAIS :)");
-                    System.exit(0);
-                    validOption = false;
-                } else {
-                    clearTerminal();
-                    System.out.println("Valor Invalido, digitar um valor adequado");
-                }
-            } catch(InputMismatchException error) {
-                input.next(); // Discard invalid input
-                continue;
-            }
-        }
-        input.close();
+    public void optionsMenu() {
+        System.out.println("++++++++++++++++++++++++++++++");
+        System.out.println("[1] Viajar");
+        System.out.println("[2] Sair do jogo");
+        System.out.println("++++++++++++++++++++++++++++++");
     }
     
     public void travelMenu(Maxwell maxwell) {
