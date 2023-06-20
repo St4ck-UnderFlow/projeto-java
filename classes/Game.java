@@ -85,7 +85,7 @@ public class Game {
         int cityIndexChoiceInput = input.nextInt();
 
         // users options start with 1 and the array`indexs start with 0
-        Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput);
+        Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
         this.maxwell.setCurrentCity(frontierChoosen.getDestination());
         
     }

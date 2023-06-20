@@ -66,7 +66,7 @@ public class Menu {
 
         System.out.println("+=== CIDADES FRONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {
-            System.out.println(i +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
+            System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
     }
 }
