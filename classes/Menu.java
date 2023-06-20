@@ -67,6 +67,7 @@ public class Menu {
 
                 if (option == 1) {
                     // [1] Viajar
+                    travelMenu(maxwell);
                     game.travel(maxwell);
                     validOption = false;
                 } else if (option == 2) {
@@ -93,7 +94,7 @@ public class Menu {
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
 
-        System.out.println("Cidade Atual => " +greenColorCode+ maxwell.getCurrentCity().getName()+resetColorCode);
+        System.out.println("Cidade Atual => " + greenColorCode + maxwell.getCurrentCity().getName()+ resetColorCode);
 
         System.out.println(" ");
 

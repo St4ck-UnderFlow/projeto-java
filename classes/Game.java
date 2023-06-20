@@ -71,6 +71,8 @@ public class Game {
     public void travel(Maxwell maxwell) {
         Scanner input = new Scanner(System.in);
 
+        // system ask which city the player wants to go
+        System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
         int cityIndexChoiceInput = input.nextInt();
 
         // users options start with 1 and the array`indexs start with 0
