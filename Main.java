@@ -11,7 +11,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Menu menu = new Menu();
         Game game = new Game();
-        Maxwell maxwell = new Maxwell(game.ubud);
+        Maxwell maxwell = new Maxwell(game.aymarLeague);
 
         boolean validInput = true;
         
@@ -27,12 +27,12 @@ public class Main {
                         validInput = false;
                         break;
                     case 2:
-                        System.out.println("Leaving So Soon ???");
+                        System.out.println("JÁ DESISTIU ???");
                         validInput = false;
                         break; 
                     default:
                         menu.clearTerminal();
-                        System.out.println("This option does not exist, please type the right ones");
+                        System.out.println("Essa opção não existe, digite uma opção valida");
                         break;
                 }
             } catch(InputMismatchException error) {

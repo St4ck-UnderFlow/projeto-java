@@ -6,22 +6,22 @@ import java.util.Scanner;
 public class Menu {
     public void startMenu() {
         // Menu Screen | can start the game or leave 
-        System.out.println("===== WELCOME, ADVENTURER !!! =====");
-        System.out.println("<< Chose an option >>");
-        System.out.println("1. Start Adventure");
-        System.out.println("2. Exit");
+        System.out.println("===== BEM-VINDO, VIAJANTE !!! =====");
+        System.out.println("<< Escolha uma Opção >>");
+        System.out.println("1. Começar a Aventura");
+        System.out.println("2. Sair");
     }
 
     public void gameOverScreen() {
         // death screen | if restart, resets the game, if not, leaves
-        System.out.println("======== GAME OVER ========");
-        System.out.println("1 - RESTART  | 2 - EXIT");
+        System.out.println("======== FIM DE JOGO ========");
+        System.out.println("1 - REINICIAR  | 2 - SAIR");
     }
 
     public void gameOverConfirm() {
         // Confirmation to leave the game
-        System.out.println("======== DO YOU WISH TO LEAVE ? ========");
-        System.out.println("1 - YES  | 2 - NO");
+        System.out.println("======== DESEJA SAIR DO JOGO ? ========");
+        System.out.println("1 - SIM  | 2 - NÃO");
     }
 
     public void clearTerminal() {
@@ -34,7 +34,17 @@ public class Menu {
 
         clearTerminal();
 
-        System.out.println("=== Welcome to " + maxwell.getCurrentCity().getName() + " ===");
+        // Código ANSI para cor verde
+        String greenColorCode = "\u001B[32m";
+
+        // Código ANSI para resetar a cor
+        String resetColorCode = "\u001B[0m";
+
+        // Nome da cidade
+        String cityName = maxwell.getCurrentCity().getName();
+
+        // Imprimir o nome da cidade em verde
+        System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
         System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
         System.out.println("Quantidade de poder => " + maxwell.getPower());  
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
@@ -67,12 +77,12 @@ public class Menu {
                 } else if (option == 2) {
                     // [2] Sair do jogo
                     clearTerminal();
-                    System.out.println("goodbye");
+                    System.out.println("OBRIGADO POR JOGAR NOSSO JOGUINHO, ATÉ MAIS :)");
                     System.exit(0);
                     validOption = false;
                 } else {
                     clearTerminal();
-                    System.out.println("invalid value, please type a correct one");
+                    System.out.println("Valor Invalido, digitar um valor adequado");
                 }
             } catch(InputMismatchException error) {
                 input.next(); // Discard invalid input

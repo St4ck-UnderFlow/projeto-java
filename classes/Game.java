@@ -72,10 +72,16 @@ public class Game {
     public void travel(Maxwell maxwell) {
         menu.clearTerminal();
         ArrayList<Frontier> frontiers = maxwell.getCurrentCity().getFrontiers();
+        // Código ANSI para cor verde
+        String greenColorCode = "\u001B[32m";
 
-        System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
+        // Código ANSI para resetar a cor
+        String resetColorCode = "\u001B[0m";
+        System.out.println("Cidade Atual => " +greenColorCode+ maxwell.getCurrentCity().getName()+resetColorCode);
+        System.out.println(" ");
+        System.out.println("+=== CIDADES FONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {
-            System.out.println(i + 1 +  "- " + frontiers.get(i).getDestination().getName());
+            System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
     }
 
