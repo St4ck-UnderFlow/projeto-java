@@ -4,22 +4,18 @@ import java.util.ArrayList;
 
 public class City {
     private String name;
-    private ArrayList<City> nearbyCities;
+    private ArrayList<Frontier> frontiers;
     public boolean hasMission;
-    public boolean alreadyVisited;
     private String[] rules;
     private Merchant merchant;
-    private int travelCoinsNeeded;
     private int powerUp;
 
-    public City(String name, boolean hasMission, boolean alreadyVisited, String[] rules, Merchant merchant, int powerUp) {
+    public City(String name, boolean hasMission, String[] rules, Merchant merchant, int powerUp) {
         this.name = name;
-        this.nearbyCities = new ArrayList<>();
+        this.frontiers = new ArrayList<>();
         this.hasMission = hasMission;
-        this.alreadyVisited = alreadyVisited;
         this.rules = rules;
         this.merchant = merchant;
-        this.travelCoinsNeeded = 1;
         this.powerUp = powerUp;
     }
 
@@ -31,19 +27,13 @@ public class City {
         return merchant;
     }
 
-    public ArrayList<City> getNearbyCities() {
-        return nearbyCities;
+    // Create a new border that connects two cities
+    public void addFrontier(City city, int powerUp) {
+        Frontier frontier = new Frontier(city, powerUp);
+        this.frontiers.add(frontier);
     }
 
     public String[] getRules() {
         return rules;
-    }
-
-    public int getTravelCoinsNeeded() {
-        return this.getTravelCoinsNeeded();
-    }
-
-    public void addNerabyCity(City city) {
-        this.nearbyCities.add(city);
     }
 }
