@@ -72,6 +72,7 @@ public class Game {
         Scanner input = new Scanner(System.in);
 
         // system ask which city the player wants to go
+        System.out.println(" ");
         System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
         int cityIndexChoiceInput = input.nextInt();
 

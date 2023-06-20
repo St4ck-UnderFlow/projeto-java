@@ -67,6 +67,7 @@ public class Menu {
 
                 if (option == 1) {
                     // [1] Viajar
+                    System.out.println(" ");
                     travelMenu(maxwell);
                     game.travel(maxwell);
                     validOption = false;
@@ -98,7 +99,7 @@ public class Menu {
 
         System.out.println(" ");
 
-        System.out.println("+=== CIDADES FONTEIRA ===+");
+        System.out.println("+=== CIDADES FRONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {
             System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
