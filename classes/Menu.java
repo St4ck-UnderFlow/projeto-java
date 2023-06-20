@@ -30,7 +30,7 @@ public class Menu {
 
     public void defaultMenu(Maxwell maxwell) {
         // using when the user start the game and when he arives in a city;
-        clearTerminal();
+        //clearTerminal();
 
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";

@@ -73,20 +73,27 @@ public class Game {
     }
 
     public void travel() {
-        Scanner input = new Scanner(System.in);
+        
+        try {
+            Scanner input = new Scanner(System.in);
+    
+            menu.clearTerminal();
+            ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
+            menu.travelMenu(frontiers);
+    
+            // system ask which city the player wants to goa
+            System.out.println(" ");
+            System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
+            int cityIndexChoiceInput = input.nextInt();
+            
+            // users options start with 1 and the array`indexs start with 0
+            Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
+            this.maxwell.setCurrentCity(frontierChoosen.getDestination());
+        } catch (IndexOutOfBoundsException error) {
+            System.out.println("NORIET ... Tente um valor de fronteira valido");
+        }
+            
 
-        menu.clearTerminal();
-        ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-        menu.travelMenu(frontiers);
-
-        // system ask which city the player wants to goa
-        System.out.println(" ");
-        System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
-        int cityIndexChoiceInput = input.nextInt();
-
-        // users options start with 1 and the array`indexs start with 0
-        Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
-        this.maxwell.setCurrentCity(frontierChoosen.getDestination());
         
     }
 
