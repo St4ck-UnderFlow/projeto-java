@@ -11,6 +11,6 @@
 - [x] When exiting the game, the game has to close without crashing
 - [x] When insert to travel to next city, have to show the available citys
 
-- [ ] When insert a index that not exist to travel another city, the code don't crash
-- [ ] When travel to another city, have to increase or decrease the amount of power
-- [ ] When show the opitions of citys can you have travel, have to show the amount of power the player have
+- [x] When insert a index that not exist to travel another city, the code don't crash
+- [x] When travel to another city, have to increase or decrease the amount of power
+- [x] When show the opitions of citys can you have travel, have to show the amount of power the player have
