@@ -11,7 +11,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         Menu menu = new Menu();
         Game game = new Game();
-        Maxwell maxwell = new Maxwell(game.aymarLeague);
+        Maxwell maxwell = new Maxwell(game.ubud);
 
         boolean validInput = true;
         

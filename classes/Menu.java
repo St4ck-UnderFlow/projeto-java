@@ -1,5 +1,6 @@
 package classes;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -31,19 +32,13 @@ public class Menu {
 
     public void defaultMenu(Maxwell maxwell) {
         // using when the user start the game and when he arives in a city;
-
         clearTerminal();
 
-        // Código ANSI para cor verde
         String greenColorCode = "\u001B[32m";
-
-        // Código ANSI para resetar a cor
         String resetColorCode = "\u001B[0m";
 
-        // Nome da cidade
         String cityName = maxwell.getCurrentCity().getName();
 
-        // Imprimir o nome da cidade em verde
         System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
         System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
         System.out.println("Quantidade de poder => " + maxwell.getPower());  
@@ -92,4 +87,19 @@ public class Menu {
         input.close();
     }
     
+    public void travelMenu(Maxwell maxwell) {
+        ArrayList<Frontier> frontiers = maxwell.getCurrentCity().getFrontiers();
+
+        String greenColorCode = "\u001B[32m";
+        String resetColorCode = "\u001B[0m";
+
+        System.out.println("Cidade Atual => " +greenColorCode+ maxwell.getCurrentCity().getName()+resetColorCode);
+
+        System.out.println(" ");
+
+        System.out.println("+=== CIDADES FONTEIRA ===+");
+        for (int i = 0; i < frontiers.size(); i++) {
+            System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
+        }
+    }
 }

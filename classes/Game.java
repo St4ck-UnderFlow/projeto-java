@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Game {
 
@@ -39,13 +40,12 @@ public class Game {
     public City kasya = new City("Principality of Kasya", false, null, null, -7);
 
     public ArrayList<City> cities;
-    public Menu menu;
+
     
         
     public Game() {
         this.cities = new ArrayList<>();
         setCitiesArrayList();
-        this.menu = new Menu();
     }
 
     public void setCitiesArrayList() {
@@ -68,21 +68,16 @@ public class Game {
         this.cities.add(this.kasya);
     }
 
-
     public void travel(Maxwell maxwell) {
-        menu.clearTerminal();
-        ArrayList<Frontier> frontiers = maxwell.getCurrentCity().getFrontiers();
-        // Código ANSI para cor verde
-        String greenColorCode = "\u001B[32m";
+        Scanner input = new Scanner(System.in);
 
-        // Código ANSI para resetar a cor
-        String resetColorCode = "\u001B[0m";
-        System.out.println("Cidade Atual => " +greenColorCode+ maxwell.getCurrentCity().getName()+resetColorCode);
-        System.out.println(" ");
-        System.out.println("+=== CIDADES FONTEIRA ===+");
-        for (int i = 0; i < frontiers.size(); i++) {
-            System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
-        }
+        int cityIndexChoiceInput = input.nextInt();
+
+        // users options start with 1 and the array`indexs start with 0
+        City cityChoose = this.cities.get(cityIndexChoiceInput - 1);
+        maxwell.setCurrentCity(cityChoose);
+
+        input.close();
     }
 
     public void startGame() {
