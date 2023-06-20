@@ -6,165 +6,141 @@ public class Game {
 
     private ArrayList<City> citiesWithFrontiers = new ArrayList<>();
 
-    public City ubud = new City("Ubud",false, false, null, null, 0);
+    public City ubud = new City("Ubud", false, null, null, 0);
 
-    public City nekika = new City("Principality of Nekikh", false, false, null, null, 1);
+    public City nekika = new City("Principality of Nekikh", false, null, null, 1);
 
-    public City legmod = new City("Kingdom of Legmod", false, false, null, null, 2);
+    public City legmod = new City("Kingdom of Legmod", false, null, null, 2);
 
-    public City gritestar = new City("Principality of Gritesthr", false, false, null, null, 5);
+    public City gritestar = new City("Principality of Gritesthr", false, null, null, 5);
 
-    public City drogove = new City("Protectorate of Dogrove", false, false, null, null, 3);
+    public City drogove = new City("Protectorate of Dogrove", false, null, null, 3);
 
-    public City oldcalia = new City("Kingdom of Oldcalia", false, false, null, null, 4);
+    public City oldcalia = new City("Kingdom of Oldcalia", false, null, null, 4);
 
-    public City lastwatch = new City("Kingdom of Lastwatch", false, false, null, null, -2);
+    public City lastwatch = new City("Kingdom of Lastwatch", false, null, null, -2);
 
-    public City smalia = new City("Grand Duchy of Smalia", false, false, null, null, 1);
+    public City smalia = new City("Grand Duchy of Smalia", false, null, null, 1);
 
-    public City defalsia = new City("Defalsia", true, false, null, null, -3);
+    public City defalsia = new City("Defalsia", true, null, null, -3);
 
-    public City aymarLeague = new City("Aymar League", true, false, null, null, 1);
+    public City aymarLeague = new City("Aymar League", true, null, null, 1);
 
-    public City kalb = new City("Kingdom of Kalb", false, false, null, null, 2);
+    public City kalb = new City("Kingdom of Kalb", false, null, null, 2);
 
-    public City vuneseEmpire = new City("Vunese of Empire", true, false, null, null, 0);
+    public City vuneseEmpire = new City("Vunese of Empire", true, null, null, 0);
 
-    public City karhora = new City("Principality of Karhora", false, false, null, null, -2);
+    public City karhora = new City("Principality of Karhora", false, null, null, -2);
 
-    public City nargumun = new City("Nargumun", true, false, null, null, 0);
+    public City nargumun = new City("Nargumun", true, null, null, 0);
 
-    public City bun = new City("Bun", true, false, null, null, 5);
+    public City bun = new City("Bun", true, null, null, 5);
 
-    public City chandirSultanate = new City("Chandir Sultanate", false, false, null, null, 1);
+    public City chandirSultanate = new City("Chandir Sultanate", false, null, null, 1);
 
-    public City kasya = new City("Principality of Kasya", false, false, null, null, -7);
+    public City kasya = new City("Principality of Kasya", false, null, null, -7);
         
     public Game() {
         
     }
 
     public void startGame() {
-        addNearbyCitiesFrontiers();
-        addCitiesWithFrontiersOnMap();
+        setFrontiers();
     }
 
-    public void addNearbyCitiesFrontiers() {
+    public void setFrontiers() {
         
-        // Frontier Ubud
-        this.ubud.addNerabyCity(this.legmod);
-        this.ubud.addNerabyCity(this.nekika);
+        // Frontiers Ubud
+        this.ubud.addFrontier(this.legmod, 2);
+        this.ubud.addFrontier(this.nekika, 1);
 
-        // Frontier Nekika
-        this.nekika.addNerabyCity(this.legmod);
-        this.nekika.addNerabyCity(this.gritestar);
-        this.nekika.addNerabyCity(this.ubud);
+        // Frontiers Nekika
+        this.nekika.addFrontier(this.legmod, 2);
+        this.nekika.addFrontier(this.gritestar, 5);
+        this.nekika.addFrontier(this.ubud, 0);
 
-        // Frontier Legmod
-        this.legmod.addNerabyCity(this.ubud);
-        this.legmod.addNerabyCity(this.nekika);
-        this.legmod.addNerabyCity(this.gritestar);
-        this.legmod.addNerabyCity(this.drogove);
-        this.legmod.addNerabyCity(this.oldcalia);
+        // Frontiers Legmod
+        this.legmod.addFrontier(this.ubud, 0);
+        this.legmod.addFrontier(this.nekika, 1);
+        this.legmod.addFrontier(this.gritestar, 5);
+        this.legmod.addFrontier(this.drogove, 3);
+        this.legmod.addFrontier(this.oldcalia, 4);
 
-        // Frontier Gritestar
-        this.gritestar.addNerabyCity(this.nekika);
-        this.gritestar.addNerabyCity(this.drogove);
-        this.gritestar.addNerabyCity(this.legmod);
-        this.gritestar.addNerabyCity(this.lastwatch);
+        // Frontiers Gritestar
+        this.gritestar.addFrontier(this.nekika, 1);
+        this.gritestar.addFrontier(this.drogove, 3);
+        this.gritestar.addFrontier(this.legmod, 2);
+        this.gritestar.addFrontier(this.lastwatch, -2);
 
-        // Frontier Drogove
-        this.drogove.addNerabyCity(this.legmod);
-        this.drogove.addNerabyCity(this.gritestar);
-        this.drogove.addNerabyCity(this.lastwatch);
-        this.drogove.addNerabyCity(this.oldcalia);
+        // Frontiers Drogove
+        this.drogove.addFrontier(this.legmod, 2);
+        this.drogove.addFrontier(this.gritestar, 5);
+        this.drogove.addFrontier(this.lastwatch, -2);
+        this.drogove.addFrontier(this.oldcalia, 4);
 
-        // Frontier LastWatch
-        this.lastwatch.addNerabyCity(this.gritestar);
-        this.lastwatch.addNerabyCity(this.drogove);
-        this.lastwatch.addNerabyCity(this.smalia);
+        // Frontiers LastWatch
+        this.lastwatch.addFrontier(this.gritestar, -5);
+        this.lastwatch.addFrontier(this.drogove, 3);
+        this.lastwatch.addFrontier(this.smalia, 1);
 
-        // Frontier Smalia
-        this.smalia.addNerabyCity(this.lastwatch);
-        this.smalia.addNerabyCity(this.oldcalia);
+        // Frontiers Smalia
+        this.smalia.addFrontier(this.lastwatch, -2);
+        this.smalia.addFrontier(this.oldcalia, 4);
 
-        // Frontier OldCalia
-        this.oldcalia.addNerabyCity(this.smalia);
-        this.oldcalia.addNerabyCity(this.drogove);
-        this.oldcalia.addNerabyCity(this.legmod);
-        this.oldcalia.addNerabyCity(this.defalsia);
-        this.oldcalia.addNerabyCity(this.aymarLeague);
-        this.oldcalia.addNerabyCity(this.kalb);
+        // Frontiers OldCalia
+        this.oldcalia.addFrontier(this.smalia, 1);
+        this.oldcalia.addFrontier(this.drogove, 3);
+        this.oldcalia.addFrontier(this.legmod, 2);
+        this.oldcalia.addFrontier(this.defalsia, -3);
+        this.oldcalia.addFrontier(this.aymarLeague, 1);
+        this.oldcalia.addFrontier(this.kalb, 2);
 
-        // Frontier Defalsia
-        this.defalsia.addNerabyCity(this.aymarLeague);
-        this.defalsia.addNerabyCity(this.oldcalia);
+        // Frontiers Defalsia
+        this.defalsia.addFrontier(this.aymarLeague, 1);
+        this.defalsia.addFrontier(this.oldcalia, 4);
 
-        // Frontier Kalb
-        this.kalb.addNerabyCity(this.oldcalia);
-        this.kalb.addNerabyCity(this.aymarLeague);
-        this.kalb.addNerabyCity(this.vuneseEmpire);
+        // Frontiers Kalb
+        this.kalb.addFrontier(this.oldcalia, 4);
+        this.kalb.addFrontier(this.aymarLeague, 1);
+        this.kalb.addFrontier(this.vuneseEmpire, 0);
 
-        // Frontier Aymar League
-        this.aymarLeague.addNerabyCity(this.defalsia);
-        this.aymarLeague.addNerabyCity(this.oldcalia);
-        this.aymarLeague.addNerabyCity(this.kalb);
-        this.aymarLeague.addNerabyCity(this.vuneseEmpire);
-        this.aymarLeague.addNerabyCity(this.chandirSultanate);
-        this.aymarLeague.addNerabyCity(this.bun);
-        this.aymarLeague.addNerabyCity(this.nargumun);
-        this.aymarLeague.addNerabyCity(this.karhora);
+        // Frontiers Aymar League
+        this.aymarLeague.addFrontier(this.defalsia, -3);
+        this.aymarLeague.addFrontier(this.oldcalia, 4);
+        this.aymarLeague.addFrontier(this.kalb, 2);
+        this.aymarLeague.addFrontier(this.vuneseEmpire, 0);
+        this.aymarLeague.addFrontier(this.chandirSultanate, 1);
+        this.aymarLeague.addFrontier(this.bun, 5);
+        this.aymarLeague.addFrontier(this.nargumun, 0);
+        this.aymarLeague.addFrontier(this.karhora, -2);
 
-        // Frontier Vunese Empire
-        this.vuneseEmpire.addNerabyCity(this.aymarLeague);
-        this.vuneseEmpire.addNerabyCity(this.kalb);
-        this.vuneseEmpire.addNerabyCity(this.chandirSultanate);
+        // Frontiers Vunese Empire
+        this.vuneseEmpire.addFrontier(this.aymarLeague, 1);
+        this.vuneseEmpire.addFrontier(this.kalb, 2);
+        this.vuneseEmpire.addFrontier(this.chandirSultanate, 1);
 
-        // Frontier Karhora
-        this.karhora.addNerabyCity(this.aymarLeague);
-        this.karhora.addNerabyCity(this.nargumun);
+        // Frontiers Karhora
+        this.karhora.addFrontier(this.aymarLeague, 1);
+        this.karhora.addFrontier(this.nargumun, 0);
 
-        // Frontier Nargumun
-        this.nargumun.addNerabyCity(this.karhora);
-        this.nargumun.addNerabyCity(this.aymarLeague);
-        this.nargumun.addNerabyCity(this.bun);
+        // FrontiersNargumun
+        this.nargumun.addFrontier(this.karhora, -2);
+        this.nargumun.addFrontier(this.aymarLeague, 1);
+        this.nargumun.addFrontier(this.bun, 5);
 
-        // Frontier Bun
-        this.bun.addNerabyCity(this.nargumun);
-        this.bun.addNerabyCity(this.aymarLeague);
-        this.bun.addNerabyCity(this.chandirSultanate);
+        // Frontiers Bun
+        this.bun.addFrontier(this.nargumun, 0);
+        this.bun.addFrontier(this.aymarLeague, 1);
+        this.bun.addFrontier(this.chandirSultanate, 1);
 
-        // Frontier Chandir Sultanate
-        this.chandirSultanate.addNerabyCity(this.vuneseEmpire);
-        this.chandirSultanate.addNerabyCity(this.aymarLeague);
-        this.chandirSultanate.addNerabyCity(this.bun);
-        this.chandirSultanate.addNerabyCity(this.kasya);
+        // Frontiers Chandir Sultanate
+        this.chandirSultanate.addFrontier(this.vuneseEmpire, 0);
+        this.chandirSultanate.addFrontier(this.aymarLeague, 1);
+        this.chandirSultanate.addFrontier(this.bun, 5);
+        this.chandirSultanate.addFrontier(this.kasya, -7);
 
         // Frontier Kasya
-        this.kasya.addNerabyCity(this.chandirSultanate);
+        this.kasya.addFrontier(this.chandirSultanate, 1);
         
-    }
-
-    public void addCitiesWithFrontiersOnMap() {
-        // this function must be called before addNearbyCitiesFrontiers() function
-        this.citiesWithFrontiers.add(this.ubud);
-        this.citiesWithFrontiers.add(this.nekika);
-        this.citiesWithFrontiers.add(this.legmod);
-        this.citiesWithFrontiers.add(this.gritestar);
-        this.citiesWithFrontiers.add(this.drogove);
-        this.citiesWithFrontiers.add(this.lastwatch);
-        this.citiesWithFrontiers.add(this.smalia);
-        this.citiesWithFrontiers.add(this.oldcalia);
-        this.citiesWithFrontiers.add(this.defalsia);
-        this.citiesWithFrontiers.add(this.kalb);
-        this.citiesWithFrontiers.add(this.aymarLeague);
-        this.citiesWithFrontiers.add(this.vuneseEmpire);
-        this.citiesWithFrontiers.add(this.karhora);
-        this.citiesWithFrontiers.add(this.nargumun);
-        this.citiesWithFrontiers.add(this.bun);
-        this.citiesWithFrontiers.add(this.chandirSultanate);
-        this.citiesWithFrontiers.add(this.kasya);
-
-        Map map = new Map(this.citiesWithFrontiers);
     }
 }
