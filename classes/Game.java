@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Game {
 
-    private ArrayList<City> citiesWithFrontiers = new ArrayList<>();
-
     public City ubud = new City("Ubud", false, null, null, 0);
 
     public City nekika = new City("Principality of Nekikh", false, null, null, 1);
@@ -39,9 +37,46 @@ public class Game {
     public City chandirSultanate = new City("Chandir Sultanate", false, null, null, 1);
 
     public City kasya = new City("Principality of Kasya", false, null, null, -7);
+
+    public ArrayList<City> cities;
+    public Menu menu;
+    
         
     public Game() {
-        
+        this.cities = new ArrayList<>();
+        setCitiesArrayList();
+        this.menu = new Menu();
+    }
+
+    public void setCitiesArrayList() {
+        this.cities.add(this.ubud);
+        this.cities.add(this.nekika);
+        this.cities.add(this.legmod);
+        this.cities.add(this.gritestar);
+        this.cities.add(this.drogove);
+        this.cities.add(this.oldcalia);
+        this.cities.add(this.lastwatch);
+        this.cities.add(this.smalia);
+        this.cities.add(this.defalsia);
+        this.cities.add(this.aymarLeague);
+        this.cities.add(this.kalb);
+        this.cities.add(this.vuneseEmpire);
+        this.cities.add(this.karhora);
+        this.cities.add(this.nargumun);
+        this.cities.add(this.bun);
+        this.cities.add(this.chandirSultanate);
+        this.cities.add(this.kasya);
+    }
+
+
+    public void travel(Maxwell maxwell) {
+        menu.clearTerminal();
+        ArrayList<Frontier> frontiers = maxwell.getCurrentCity().getFrontiers();
+
+        System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
+        for (int i = 0; i < frontiers.size(); i++) {
+            System.out.println(i + 1 +  "- " + frontiers.get(i).getDestination().getName());
+        }
     }
 
     public void startGame() {

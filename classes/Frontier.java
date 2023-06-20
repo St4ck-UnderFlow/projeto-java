@@ -9,4 +9,13 @@ public class Frontier {
         this.destination = destination;
         this.power = power;
     }
+
+    public City getDestination() {
+        return destination;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
 }

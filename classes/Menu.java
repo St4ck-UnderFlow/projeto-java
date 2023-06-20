@@ -45,7 +45,7 @@ public class Menu {
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
     }
 
-    public void optionsMenu(Maxwell maxwell) {
+    public void optionsMenu(Maxwell maxwell, Game game) {
 
         Scanner input = new Scanner(System.in);
         boolean validOption = true;
@@ -62,7 +62,7 @@ public class Menu {
 
                 if (option == 1) {
                     // [1] Viajar
-                    maxwell.travel();
+                    game.travel(maxwell);
                     validOption = false;
                 } else if (option == 2) {
                     // [2] Sair do jogo

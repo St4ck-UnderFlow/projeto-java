@@ -33,6 +33,10 @@ public class City {
         this.frontiers.add(frontier);
     }
 
+    public ArrayList<Frontier> getFrontiers() {
+        return frontiers;
+    }
+
     public String[] getRules() {
         return rules;
     }

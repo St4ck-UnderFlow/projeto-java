@@ -23,7 +23,7 @@ public class Main {
                 switch(option) {
                     case 1:
                         game.startGame();
-                        menu.optionsMenu(maxwell);
+                        menu.optionsMenu(maxwell,game);
                         validInput = false;
                         break;
                     case 2:
