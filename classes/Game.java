@@ -7,8 +7,6 @@ import java.util.Scanner;
 public class Game {
     public Menu menu;
     public Maxwell maxwell;
-
-    public ArrayList<City> cities;
     public Map map;
 
     public Game(Maxwell maxwell) {
@@ -99,7 +97,7 @@ public class Game {
     }
 
     public void checkGameOver() {
-        // this function check all the possibilities to game over
+        // this function check all the possibilities to game over 
         
         int currentPower = this.maxwell.getPower();
         int currentThreshold = this.maxwell.getCurrentThreshold();
@@ -108,13 +106,18 @@ public class Game {
         City currentCity = this.maxwell.getCurrentCity();
 
         if(currentPower > currentThreshold) {
-            System.out.println("Fime de jogo! => Limiar máximo ultrapassado");
+            System.out.println("Fim de jogo! => Limiar máximo ultrapassado");
             System.exit(0);               
         } 
         
         if (currentCity.getName() == "Nargumun" && currentTravelCoins < 4) {
             System.out.println("Fim de jogo! => Maxwell chegou em Nargumun, mas foi alocado como servo");
             System.exit(0);    
+        }
+
+        if (currentTravelCoins <= 0) {
+            System.out.println("Fim de Jogo ! => Maxwell ficou sem Moedas de Transporte");
+            System.exit(0);
         }
     }
 }

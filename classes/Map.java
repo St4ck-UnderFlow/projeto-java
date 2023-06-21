@@ -41,7 +41,6 @@ public class Map {
 
     public Map() {
         this.cities = new ArrayList<>();
-        setCitiesArrayList();
         setFrontiers();
     }
 
@@ -140,26 +139,4 @@ public class Map {
         this.kasya.addFrontier(this.chandirSultanate, 1);
         
     }
-
-
-    public void setCitiesArrayList() {
-        this.cities.add(this.ubud);
-        this.cities.add(this.nekika);
-        this.cities.add(this.legmod);
-        this.cities.add(this.gritestar);
-        this.cities.add(this.drogove);
-        this.cities.add(this.oldcalia);
-        this.cities.add(this.lastwatch);
-        this.cities.add(this.smalia);
-        this.cities.add(this.defalsia);
-        this.cities.add(this.aymarLeague);
-        this.cities.add(this.kalb);
-        this.cities.add(this.vuneseEmpire);
-        this.cities.add(this.karhora);
-        this.cities.add(this.nargumun);
-        this.cities.add(this.bun);
-        this.cities.add(this.chandirSultanate);
-        this.cities.add(this.kasya);
-    }
-
 }
