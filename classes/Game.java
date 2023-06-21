@@ -90,17 +90,20 @@ public class Game {
     }
 
     public void updatedMaxwellInfos(int power, int travelCoins) {
+
+        // update current power of Maxwell
         int currentPower = this.maxwell.getPower();
         int currentPowerUptaded = currentPower + power;
 
-        int currentTravelCoins = this.maxwell.getTravelCoins();
-        this.maxwell.setTravelCoins(currentTravelCoins - 1);
-
-        if (currentPowerUptaded <= 0) {
+        if (currentPowerUptaded < 0) {
             this.maxwell.setPower(0);
         } else {
             this.maxwell.setPower(currentPower + power);
         } 
+
+        // update travel coins of Maxwell
+        int currentTravelCoins = this.maxwell.getTravelCoins();
+        this.maxwell.setTravelCoins(currentTravelCoins - 1);
     }
 
     public void checkGameOver() {
