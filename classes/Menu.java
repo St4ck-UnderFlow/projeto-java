@@ -36,10 +36,6 @@ public class Menu {
         System.out.println("Missao Atual => " + maxwell.getCurrentMisson());
         System.out.println("=======================================");
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
-    }
-
-    // Options the player has when he/she didn't accept any mission
-    public void optionsMenu() {
         System.out.println("++++++++++++++++++++++++++++++");
         System.out.println("[1] Viajar");
         System.out.println("[2] Sair do jogo");
@@ -79,9 +75,22 @@ public class Menu {
         System.out.println(" ");
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
+ 
+    public void onMissionMenu(Maxwell maxwell) {
+        String greenColorCode = "\u001B[32m";
+        String resetColorCode = "\u001B[0m";
 
-    // Options the player has when he/she accepted an mission
-    public void optionsMenuIfHasMission(Maxwell maxwell) {
+        String cityName = maxwell.getCurrentCity().getName();
+
+        System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
+        System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
+        System.out.println("Quantidade de poder => " + maxwell.getPower());  
+        System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
+        System.err.println("=======================================");
+        System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
+        System.out.println("Missao Atual => " + maxwell.getCurrentMisson());
+        System.out.println("=======================================");
+        System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
         System.out.println("++++++++++++++++++++++++++++++");
         System.out.println("[1] Viajar");
         System.out.println("[2] Sair do jogo");
@@ -89,6 +98,17 @@ public class Menu {
         System.out.println("++++++++++++++++++++++++++++++");
         System.out.println(" ");
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
+    }
+
+    public void showMenu(Maxwell maxwell) {
+        if (maxwell.isOnMission()) {
+            // show the on mission menu
+            onMissionMenu(maxwell);
+
+        } else {
+            // show the default menu
+            defaultMenu(maxwell);
+        }
     }
 
 }
