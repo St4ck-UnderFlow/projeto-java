@@ -56,14 +56,16 @@ public class Menu {
         System.out.println("++++++++++++++++++++++++++++++");
     }
     
-    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power) {
+    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins) {
       
         String greenColorCode = "\u001B[32m";
         String redColorCode = "\u001B[31m";
         String resetColorCode = "\u001B[0m";
 
         System.out.println("Cidade Atual => " + greenColorCode + currentCity.getName()+ resetColorCode);
+        System.out.println("Moedas de Transporte Atual => " + redColorCode + travelCoins + resetColorCode);
         System.out.println("Poder Atual => " + redColorCode + power + resetColorCode);
+
         System.out.println(" ");
 
         

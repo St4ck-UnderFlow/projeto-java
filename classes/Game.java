@@ -23,7 +23,7 @@ public class Game {
     
             menu.clearTerminal();
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-            menu.travelMenu(frontiers, this.maxwell.getCurrentCity(), this.maxwell.getPower());
+            menu.travelMenu(frontiers, this.maxwell.getCurrentCity(), this.maxwell.getPower(), this.maxwell.getTravelCoins());
     
             // system ask which city the player wants to goa
             System.out.println(" ");
@@ -34,7 +34,7 @@ public class Game {
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
 
-            powerSync(this.maxwell.getCurrentCity().getPowerUp());
+            updatedMaxwellInfos(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
             checkGameOver();
     
         } catch (IndexOutOfBoundsException error) {
@@ -85,9 +85,12 @@ public class Game {
         input.close();
     }
 
-    public void powerSync(int power) {
+    public void updatedMaxwellInfos(int power, int travelCoins) {
         int currentPower = this.maxwell.getPower();
         int currentPowerUptaded = currentPower + power;
+
+        int currentTravelCoins = this.maxwell.getTravelCoins();
+        this.maxwell.setTravelCoins(currentTravelCoins - 1);
 
         if (currentPowerUptaded <= 0) {
             this.maxwell.setPower(0);
