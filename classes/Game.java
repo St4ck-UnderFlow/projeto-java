@@ -20,10 +20,14 @@ public class Game {
         
         try {
             Scanner input = new Scanner(System.in);
+
+            City currentCity = this.maxwell.getCurrentCity();
+            int currentPower = this.maxwell.getPower();
+            int currentTravelCoins = this.maxwell.getTravelCoins();
     
             menu.clearTerminal();
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-            menu.travelMenu(frontiers, this.maxwell.getCurrentCity(), this.maxwell.getPower(), this.maxwell.getTravelCoins());
+            menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins);
     
             // system ask which city the player wants to goa
             System.out.println(" ");
