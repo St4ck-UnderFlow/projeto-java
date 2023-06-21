@@ -14,3 +14,8 @@
 - [x] When insert a index that not exist to travel another city, the code don't crash
 - [x] When travel to another city, have to increase or decrease the amount of power
 - [x] When show the opitions of citys can you have travel, have to show the amount of power the player have
+
+- [ ] When travel to a city with a mission avaliable, must have the options: accept or reject the mission
+- [ ] When the player accept the mission, have to be possible to cancel the mission any time
+- [x] When the amount of power override the threshold, the game must be finished
+- [ ] When the player cancel the mission and return to the city of the mission, the mission shouldn't be avaliable anymore
