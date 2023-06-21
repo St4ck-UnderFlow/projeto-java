@@ -46,8 +46,10 @@ public class Game {
 
     public Game(Maxwell maxwell) {
         this.cities = new ArrayList<>();
+
         this.menu = new Menu();
         setCitiesArrayList();
+
         this.maxwell = maxwell;
         this.maxwell.setCurrentCity(this.ubud);
     }
@@ -91,12 +93,7 @@ public class Game {
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
 
             powerSync(this.maxwell.getCurrentCity().getPowerUp());
-            int currentPower = this.maxwell.getPower();
-
-            if(currentPower > this.maxwell.getCurrentThreshold()) {
-                System.out.println("Limiar máximo ultrapassado");
-                System.exit(0);               
-            } 
+            checkGameOver();
     
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
@@ -245,7 +242,30 @@ public class Game {
 
     public void powerSync(int power) {
         int currentPower = this.maxwell.getPower();
-        this.maxwell.setPower(currentPower + power);
-        System.out.println(currentPower + power);
+        int currentPowerUptaded = currentPower + power;
+
+        if (currentPowerUptaded <= 0) {
+            this.maxwell.setPower(0);
+        } else {
+            this.maxwell.setPower(currentPower + power);
+        } 
+    }
+
+    public void checkGameOver() {
+        int currentPower = this.maxwell.getPower();
+        int currentThreshold = this.maxwell.getCurrentThreshold();
+        int currentTravelCoins = this.maxwell.getTravelCoins();
+
+        City currentCity = this.maxwell.getCurrentCity();
+
+        if(currentPower > currentThreshold) {
+            System.out.println("Fime de jogo! => Limiar máximo ultrapassado");
+            System.exit(0);               
+        } 
+        
+        if (currentCity.getName() == "Nargumun" && currentTravelCoins < 4) {
+            System.out.println("Fim de jogo! => Maxwell chegou em Nargumun, mas foi alocado como servo");
+            System.exit(0);    
+        }
     }
 }
