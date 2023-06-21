@@ -41,6 +41,8 @@ public class Menu {
         System.out.println("[1] Viajar");
         System.out.println("[2] Sair do jogo");
         System.out.println("++++++++++++++++++++++++++++++");
+        System.out.println(" ");
+        System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
     
     public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins) {
@@ -69,6 +71,8 @@ public class Menu {
         System.out.println("[1] Aceitar");
         System.out.println("[2] Recusar");
         System.out.println("=====================================");
+        System.out.println(" ");
+        System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
 
     public void optionsMenuIfHasMission(Maxwell maxwell) {
@@ -77,6 +81,8 @@ public class Menu {
         System.out.println("[2] Sair do jogo");
         System.out.println("[3] Abandonar Missão");
         System.out.println("++++++++++++++++++++++++++++++");
+        System.out.println(" ");
+        System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
 
 }

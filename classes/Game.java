@@ -118,7 +118,7 @@ public class Game {
 
         City currentCity = this.maxwell.getCurrentCity();
 
-        if(currentPower > currentThreshold) {
+        if (currentPower > currentThreshold) {
             System.out.println("Fim de jogo! => Limiar máximo ultrapassado");
             System.exit(0);               
         } 
