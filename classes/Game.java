@@ -9,6 +9,7 @@ public class Game {
     public Maxwell maxwell;
     public Map map;
 
+    // Constructors
     public Game(Maxwell maxwell) {
         this.map = new Map();
         this.menu = new Menu();
@@ -16,6 +17,7 @@ public class Game {
         this.maxwell.setCurrentCity(map.ubud);
     }
 
+    // Function to travel from one city to another chosen by the player
     public void travel() {
         
         try {
@@ -37,7 +39,7 @@ public class Game {
             // users options start with 1 and the array`indexs start with 0
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
-
+            
             updatedMaxwellInfos(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
             checkGameOver();
             
@@ -50,10 +52,12 @@ public class Game {
 
     }
 
+    // Function that starts the game
     public void startGame() {
         userOptions(this.maxwell);
     }
 
+    // Function that runs the menu of Maxwell
     public void userOptions(Maxwell maxwell) {
 
         Scanner input = new Scanner(System.in);
