@@ -118,7 +118,7 @@ public class Game {
             System.exit(0);    
         }
 
-        if (currentTravelCoins <= 0) {
+        if (currentTravelCoins < 0) {
             System.out.println("Fim de Jogo ! => Maxwell ficou sem Moedas de Transporte");
             System.exit(0);
         }
