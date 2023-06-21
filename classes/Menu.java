@@ -15,6 +15,7 @@ public class Menu {
         // death screen | if restart, resets the game, if not, leaves
         System.out.println("======== FIM DE JOGO ========");
         System.out.println("1 - REINICIAR  | 2 - SAIR");
+        
     }
 
     public void gameOverConfirm() {
@@ -30,7 +31,7 @@ public class Menu {
 
     public void defaultMenu(Maxwell maxwell) {
         // using when the user start the game and when he arives in a city;
-        //clearTerminal();
+        clearTerminal();
 
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
@@ -55,12 +56,12 @@ public class Menu {
         System.out.println("++++++++++++++++++++++++++++++");
     }
     
-    public void travelMenu(ArrayList<Frontier> frontiers) {
+    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity) {
       
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
 
-        // System.out.println("Cidade Atual => " + greenColorCode + maxwell.getCurrentCity().getName()+ resetColorCode);
+        System.out.println("Cidade Atual => " + greenColorCode + currentCity.getName()+ resetColorCode);
 
         System.out.println(" ");
 

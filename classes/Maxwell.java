@@ -51,14 +51,6 @@ public class Maxwell {
         return goal;
     }
 
-    public void travel() {
-        System.out.println("Time to travel!");
-    }
-
-    public void die() {
-        System.out.println("Game Over!");
-    }
-
     public int getCurrentThreshold() {
         return currentThreshold;
     }

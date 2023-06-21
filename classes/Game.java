@@ -79,7 +79,7 @@ public class Game {
     
             menu.clearTerminal();
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-            menu.travelMenu(frontiers);
+            menu.travelMenu(frontiers, this.maxwell.getCurrentCity());
     
             // system ask which city the player wants to goa
             System.out.println(" ");
@@ -95,15 +95,13 @@ public class Game {
 
             if(currentPower > this.maxwell.getCurrentThreshold()) {
                 System.out.println("Limiar máximo ultrapassado");
-                System.exit(0);
+                System.exit(0);               
             } 
     
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
         }
-            
 
-        
     }
 
     public void startGame() {
