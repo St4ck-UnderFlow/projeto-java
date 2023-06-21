@@ -25,7 +25,6 @@ public class Game {
             int currentPower = this.maxwell.getPower();
             int currentTravelCoins = this.maxwell.getTravelCoins();
     
-            menu.clearTerminal();
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins);
     
@@ -60,8 +59,7 @@ public class Game {
         boolean validOption = true;
 
         while (validOption) {
-            menu.defaultMenu(this.maxwell);
-            menu.optionsMenu();
+            menu.showMenu(maxwell);
             try {
                 int option = input.nextInt();
 
@@ -135,11 +133,10 @@ public class Game {
     }
 
     public void ariveOnCity(City city) {
-        
-        menu.clearTerminal();
-
+        Scanner input = new Scanner(System.in);
         if (city.hasMission) {
-            System.out.println("Tem missão");
+            menu.acceptMissionMenu();
+            
         } else {
             System.out.println("Não tem missão");
         }

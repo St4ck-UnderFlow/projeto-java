@@ -7,12 +7,14 @@ public class Maxwell {
     private City currentCity;
     private String goal;
     private int currentThreshold;
+    private boolean onMission;
 
     public Maxwell() {
         this.goal = "Chegar até a cidade de Nargumun e NÃO ser alocado como Servo"; // The Main Objective of Maxwell's Journey
         this.power = 0; // The power Maxwell has currently (if this exceeds the currentThreshold, he dies)
         this.currentThreshold = 7; // The current threshold of Maxwell, it may change during his journey 
         this.travelCoins = 10; // Amount of coins Maxwell currently holds (he starts with 3 coins)
+        this.onMission = false;
     }
 
     public int getTravelCoins() {
@@ -57,6 +59,14 @@ public class Maxwell {
 
     public void setCurrentThreshold(int currentThreshold) {
         this.currentThreshold = currentThreshold;
+    }
+
+    public boolean isOnMission() {
+        return onMission;
+    }
+
+    public void setOnMission(boolean onMission) {
+        this.onMission = onMission;
     }
 
 }
