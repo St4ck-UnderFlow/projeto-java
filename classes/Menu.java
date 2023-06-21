@@ -3,21 +3,23 @@ package classes;
 import java.util.ArrayList;
 
 public class Menu {
+
+    // Menu Screen | can start the game or leave 
     public void startMenu() {
-        // Menu Screen | can start the game or leave 
         System.out.println("===== BEM-VINDO, VIAJANTE !!! =====");
         System.out.println("<< Escolha uma Opção >>");
         System.out.println("1. Começar a Aventura");
         System.out.println("2. Sair");
     }
 
+    // Function that clears the terminal
     public void clearTerminal() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    // using when the user start the game and when he arives in a city;
     public void defaultMenu(Maxwell maxwell) {
-        // using when the user start the game and when he arives in a city;
         //clearTerminal();
 
         String greenColorCode = "\u001B[32m";
@@ -36,6 +38,7 @@ public class Menu {
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
     }
 
+    // Options the player has when he/she didn't accept any mission
     public void optionsMenu() {
         System.out.println("++++++++++++++++++++++++++++++");
         System.out.println("[1] Viajar");
@@ -45,6 +48,7 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
     
+    // Menu that shows the cities frontiers, as well as the current city, power and travel coins
     public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins) {
       
         String greenColorCode = "\u001B[32m";
@@ -65,6 +69,7 @@ public class Menu {
         }
     }
 
+    // Option menu the player receive when arriving in a city with misson
     public void acceptMissionMenu() {
         System.out.println("=====================================");
         System.out.println("Sua cidade atual possui uma missão");
@@ -75,6 +80,7 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
 
+    // Options the player has when he/she accepted an mission
     public void optionsMenuIfHasMission(Maxwell maxwell) {
         System.out.println("++++++++++++++++++++++++++++++");
         System.out.println("[1] Viajar");
