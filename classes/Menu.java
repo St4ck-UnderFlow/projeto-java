@@ -11,19 +11,6 @@ public class Menu {
         System.out.println("2. Sair");
     }
 
-    public void gameOverScreen() {
-        // death screen | if restart, resets the game, if not, leaves
-        System.out.println("======== FIM DE JOGO ========");
-        System.out.println("1 - REINICIAR  | 2 - SAIR");
-        
-    }
-
-    public void gameOverConfirm() {
-        // Confirmation to leave the game
-        System.out.println("======== DESEJA SAIR DO JOGO ? ========");
-        System.out.println("1 - SIM  | 2 - NÃO");
-    }
-
     public void clearTerminal() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
@@ -31,7 +18,7 @@ public class Menu {
 
     public void defaultMenu(Maxwell maxwell) {
         // using when the user start the game and when he arives in a city;
-        clearTerminal();
+        //clearTerminal();
 
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
@@ -75,4 +62,21 @@ public class Menu {
             System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
     }
+
+    public void acceptMissionMenu() {
+        System.out.println("=====================================");
+        System.out.println("Sua cidade atual possui uma missão");
+        System.out.println("[1] Aceitar");
+        System.out.println("[2] Recusar");
+        System.out.println("=====================================");
+    }
+
+    public void optionsMenuIfHasMission(Maxwell maxwell) {
+        System.out.println("++++++++++++++++++++++++++++++");
+        System.out.println("[1] Viajar");
+        System.out.println("[2] Sair do jogo");
+        System.out.println("[3] Abandonar Missão");
+        System.out.println("++++++++++++++++++++++++++++++");
+    }
+
 }

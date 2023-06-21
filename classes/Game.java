@@ -40,6 +40,9 @@ public class Game {
 
             updatedMaxwellInfos(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
             checkGameOver();
+            
+            ariveOnCity(this.maxwell.getCurrentCity());
+
     
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
@@ -130,4 +133,16 @@ public class Game {
             System.exit(0);
         }
     }
+
+    public void ariveOnCity(City city) {
+        
+        menu.clearTerminal();
+
+        if (city.hasMission) {
+            System.out.println("Tem missão");
+        } else {
+            System.out.println("Não tem missão");
+        }
+    }
+
 }

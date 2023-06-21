@@ -23,6 +23,7 @@ public class Main {
                 int option = input.nextInt();
                 switch(option) {
                     case 1:
+                        menu.clearTerminal();
                         game.startGame();
                         break;
                     case 2:
