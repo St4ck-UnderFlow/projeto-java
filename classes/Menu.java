@@ -56,14 +56,17 @@ public class Menu {
         System.out.println("++++++++++++++++++++++++++++++");
     }
     
-    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity) {
+    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power) {
       
         String greenColorCode = "\u001B[32m";
+        String redColorCode = "\u001B[31m";
         String resetColorCode = "\u001B[0m";
 
         System.out.println("Cidade Atual => " + greenColorCode + currentCity.getName()+ resetColorCode);
-
+        System.out.println("Poder Atual => " + redColorCode + power + resetColorCode);
         System.out.println(" ");
+
+        
 
         System.out.println("+=== CIDADES FRONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {

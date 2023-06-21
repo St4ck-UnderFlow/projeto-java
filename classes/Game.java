@@ -79,7 +79,7 @@ public class Game {
     
             menu.clearTerminal();
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-            menu.travelMenu(frontiers, this.maxwell.getCurrentCity());
+            menu.travelMenu(frontiers, this.maxwell.getCurrentCity(), this.maxwell.getPower());
     
             // system ask which city the player wants to goa
             System.out.println(" ");
@@ -140,7 +140,7 @@ public class Game {
         this.drogove.addFrontier(this.oldcalia, 4);
 
         // Frontiers LastWatch
-        this.lastwatch.addFrontier(this.gritestar, -5);
+        this.lastwatch.addFrontier(this.gritestar, 5);
         this.lastwatch.addFrontier(this.drogove, 3);
         this.lastwatch.addFrontier(this.smalia, 1);
 
