@@ -96,7 +96,7 @@ public class Menu {
 
         System.out.println(" ");
         System.out.println("===========================================");
-        System.out.println(redColorCode + "VOCÊ JA ESTA COM UMA MISSÃO !!" + resetColorCode);
+        System.out.println(redColorCode + "VOCÊ JÁ ESTA COM UMA MISSÃO !!" + resetColorCode);
         System.out.println("DESEJA TROCAR A ATUAL PELA DESSA CIDADE ?");
         System.out.println("[1] - SIM");
         System.out.println("[2] - NÃO");
