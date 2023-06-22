@@ -9,17 +9,63 @@ public class Game {
     public Maxwell maxwell;
     public Map map;
 
-    // Constructors
-    public Game(Maxwell maxwell) {
+    public Game() {
         this.map = new Map();
         this.menu = new Menu();
-        this.maxwell = maxwell;
+        this.maxwell = new Maxwell();
         this.maxwell.setCurrentCity(map.ubud);
+    }
+
+    // Function that runs the menu of Maxwell
+    public void run() {
+        while (true) {
+            menu.showMenu(this.maxwell);
+
+            if (this.maxwell.isOnMission()) {
+                ArrayList<Number> options= new ArrayList<Number>();
+                options.add(0, 1);
+                options.add(0, 2);
+                options.add(0, 3);
+                int optionInputed = menu.requestInputNumber(options);
+
+                if (optionInputed == 1) {
+                    // Travel mission
+                    menu.clearTerminal();
+                    travel();
+                } else if (optionInputed == 2) {
+                    // Exit option
+                    System.exit(0);
+                } else if (optionInputed == 3) {
+                    // Abort mission option
+                    System.out.println("Abandonar missão");
+                } else {
+                    menu.clearTerminal();
+                    System.out.println("Opção inválida");
+                }
+            } else {
+                ArrayList<Number> options= new ArrayList<Number>();
+                options.add(0, 1);
+                options.add(0, 2);
+                int optionInputed = menu.requestInputNumber(options);
+            
+                if (optionInputed == 1) {
+                    menu.clearTerminal();
+                    travel();
+                } else if (optionInputed == 2) {
+                    menu.clearTerminal();
+                    System.out.println("Obrigado por jogar...");
+                    System.exit(0);
+                } else {
+                    continue;
+                }
+            }
+        
+        }
     }
 
     // Function to travel from one city to another chosen by the player
     public void travel() {
-        
+        menu.clearTerminal();
         try {
             Scanner input = new Scanner(System.in);
 
@@ -30,68 +76,24 @@ public class Game {
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins);
     
-            // system ask which city the player wants to goa
+            // Ask which city the player wants to go
             System.out.println(" ");
             System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
             int cityIndexChoiceInput = input.nextInt();
             
-            // users options start with 1 and the array`indexs start with 0
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
             
             updatedMaxwellInfos(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
-            checkGameOver();
-            
-            ariveOnCity(this.maxwell.getCurrentCity());
 
-    
+            checkGameOver();
+            checkMission(this.maxwell.getCurrentCity());
+
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
+        } catch (InputMismatchException error) {
+            System.out.println("Digite uma entrada valida");
         }
-
-    }
-
-    // Function that starts the game
-    public void startGame() {
-        userOptions(this.maxwell);
-    }
-
-    // Function that runs the menu of Maxwell
-    public void userOptions(Maxwell maxwell) {
-
-        Scanner input = new Scanner(System.in);
-        boolean validOption = true;
-
-        while (validOption) {
-            menu.showMenu(maxwell);
-            try {
-                int option = input.nextInt();
-
-                if (option == 1) {
-                    // [1] Viajar
-                    System.out.println(" ");
-                    travel();
-                    continue;
-
-                } else if (option == 2) {
-
-                    // [2] Sair do jogo
-                    menu.clearTerminal();
-                    System.out.println("OBRIGADO POR JOGAR NOSSO JOGUINHO, ATÉ MAIS :)");
-                    System.exit(0);
-                    validOption = false;
-
-                } else {
-                    menu.clearTerminal();
-                    System.out.println("Valor Invalido, digitar um valor adequado");
-                }
-
-            } catch(InputMismatchException error) {
-                input.next(); // Discard invalid input
-                continue;
-            }
-        }
-        input.close();
     }
 
     public void updatedMaxwellInfos(int power, int travelCoins) {
@@ -111,8 +113,8 @@ public class Game {
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
     }
 
+    // Check all the possibilities to game over  
     public void checkGameOver() {
-        // this function check all the possibilities to game over 
         
         int currentPower = this.maxwell.getPower();
         int currentThreshold = this.maxwell.getCurrentThreshold();
@@ -136,14 +138,27 @@ public class Game {
         }
     }
 
-    public void ariveOnCity(City city) {
-        Scanner input = new Scanner(System.in);
-        if (city.hasMission) {
+    public void checkMission(City currentCity) {
+       
+        if (currentCity.hasMission) {
             menu.acceptMissionMenu();
-            
-        } else {
-            System.out.println("Não tem missão");
-        }
+
+            ArrayList<Number> options= new ArrayList<Number>();
+            options.add(0, 1);
+            options.add(0, 2);
+
+            int optionInputed = menu.requestInputNumber(options);
+
+            if (optionInputed == 1) {
+                // Accpet mission
+                System.out.println("Missao foi aceita");
+            } else if(optionInputed == 2) {
+                System.out.println("Missao foi negada");
+            } else {
+                System.out.println("Opção inválida");
+            }
+
+        } 
     }
 
 }

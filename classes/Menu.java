@@ -1,11 +1,15 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 
 public class Menu {
 
     // Menu Screen | can start the game or leave 
     public void startMenu() {
+        clearTerminal();
         System.out.println("===== BEM-VINDO, VIAJANTE !!! =====");
         System.out.println("<< Escolha uma Opção >>");
         System.out.println("1. Começar a Aventura");
@@ -57,8 +61,6 @@ public class Menu {
 
         System.out.println(" ");
 
-        
-
         System.out.println("+=== CIDADES FRONTEIRA ===+");
         for (int i = 0; i < frontiers.size(); i++) {
             System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
@@ -102,13 +104,30 @@ public class Menu {
 
     public void showMenu(Maxwell maxwell) {
         if (maxwell.isOnMission()) {
-            // show the on mission menu
             onMissionMenu(maxwell);
-
         } else {
-            // show the default menu
             defaultMenu(maxwell);
         }
     }
 
+    public int requestInputNumber(ArrayList<Number> options) {
+        Scanner input = new Scanner(System.in);
+        boolean validOption = false;
+        int option = 0;
+
+        while (!validOption) {
+            try {
+                option = input.nextInt();
+                if (!options.contains(option)) {
+                    throw new InputMismatchException(null);
+                }
+                validOption = true;
+                
+            } catch (InputMismatchException error) {
+                return options.size() + 1;
+            } 
+        }
+        
+        return option;
+    }
 }
