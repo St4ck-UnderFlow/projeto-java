@@ -37,7 +37,7 @@ public class Game {
                     System.exit(0);
                 } else if (optionInputed == 3) {
                     // Abort mission option
-                    System.out.println("Abandonar missão");
+                    abortCurrentMission();
                 } else {
                     menu.clearTerminal();
                     System.out.println("Opção inválida");
@@ -165,6 +165,11 @@ public class Game {
             }
 
         } 
+    }
+
+    public void abortCurrentMission() {
+        this.maxwell.setCurrentMisson(null);
+        this.maxwell.setOnMission(false);
     }
 
     public void acceptMission(City currentCity) {
