@@ -54,4 +54,11 @@ public class City {
         this.mission = mission;
     }
 
+    public void blockGetMissionAgain() {
+        if(this.hasMission) {
+            setMission(null);
+            hasMission = false;
+        }
+    }
+
 }

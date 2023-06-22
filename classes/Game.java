@@ -72,6 +72,9 @@ public class Game {
             City currentCity = this.maxwell.getCurrentCity();
             int currentPower = this.maxwell.getPower();
             int currentTravelCoins = this.maxwell.getTravelCoins();
+
+            // Check if the current city misison is already accepeted/completed
+            currentCity.blockGetMissionAgain();
     
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins);
@@ -179,7 +182,6 @@ public class Game {
         } 
     }
 
-    
     public void abortCurrentMission() {
         this.maxwell.setCurrentMisson(null);
         this.maxwell.setOnMission(false);
