@@ -84,7 +84,7 @@ public class Game {
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
             
-            updatedMaxwellInfos(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
+            updatedMaxwellInfosWhenAriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
 
             checkGameOver();
             checkMission(this.maxwell.getCurrentCity());
@@ -96,7 +96,7 @@ public class Game {
         }
     }
 
-    public void updatedMaxwellInfos(int power, int travelCoins) {
+    public void updatedMaxwellInfosWhenAriveOnCity(int power, int travelCoins) {
 
         // update current power of Maxwell 
         int currentPower = this.maxwell.getPower();
@@ -111,14 +111,13 @@ public class Game {
         // update travel coins of Maxwell
         int currentTravelCoins = this.maxwell.getTravelCoins();
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
-
     }
 
-    public void updateCoinsOnMissionAccept(int travelCoins) {
+    public void updateTravelCoinsWhenAcceptMission(int travelCoins) {
         int currentTravelCoins = this.maxwell.getTravelCoins();
-
         this.maxwell.setTravelCoins(currentTravelCoins + travelCoins);
     }
+    
     // Check all the possibilities to game over  
     public void checkGameOver() {
         
@@ -170,10 +169,12 @@ public class Game {
 
     public void acceptMission(City currentCity) {
         City maxwellCity = this.maxwell.getCurrentCity();
-
         System.out.println("Missao foi aceita");
         this.maxwell.setOnMission(true);
         this.maxwell.setCurrentMisson(maxwellCity.getMission());
-        updateCoinsOnMissionAccept(currentCity.getMission().getTravelCoinsToAccept());
+
+        // update Maxwell's travel coins 
+        int travelCoinsToAccept = currentCity.getMission().getTravelCoinsToAccept();
+        updateTravelCoinsWhenAcceptMission(travelCoinsToAccept);
     }
 }
