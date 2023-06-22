@@ -24,7 +24,7 @@ public class Menu {
 
     // using when the user start the game and when he arives in a city;
     public void defaultMenu(Maxwell maxwell) {
-        //clearTerminal();
+        clearTerminal();
 
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
@@ -90,7 +90,7 @@ public class Menu {
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
         System.err.println("=======================================");
         System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
-        System.out.println("Missao Atual => " + maxwell.getCurrentMisson());
+        System.out.println("Missao Atual => " + maxwell.getCurrentMisson().getGoal());
         System.out.println("=======================================");
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
         System.out.println("++++++++++++++++++++++++++++++");

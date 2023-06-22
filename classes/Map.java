@@ -42,6 +42,7 @@ public class Map {
     public Map() {
         this.cities = new ArrayList<>();
         setFrontiers();
+        setMissionsToCities();
     }
 
     public void setFrontiers() {
@@ -138,5 +139,17 @@ public class Map {
         // Frontier Kasya
         this.kasya.addFrontier(this.chandirSultanate, 1);
         
+    }
+
+    public void setMissionsToCities() {
+        Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!");
+
+        Mission defalsiaMission = new Mission(6, 3, 1, "Vá para a cidade de Principality of Kasya e receba as Botas Do Poder !!!!");
+
+        Mission vuneseMission = new Mission(1, 10, 4, "Vá para a cidade de Ubud e receba a Glória Dos Retornados !!!!");
+
+        this.kalb.setMission(kalbMission); 
+        this.defalsia.setMission(defalsiaMission);
+        this.vuneseEmpire.setMission(vuneseMission);
     }
 }

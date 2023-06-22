@@ -98,21 +98,27 @@ public class Game {
 
     public void updatedMaxwellInfos(int power, int travelCoins) {
 
-        // update current power of Maxwell
+        // update current power of Maxwell 
         int currentPower = this.maxwell.getPower();
         int currentPowerUptaded = currentPower + power;
 
         if (currentPowerUptaded < 0) {
             this.maxwell.setPower(0);
-        } else {
+        }else {
             this.maxwell.setPower(currentPower + power);
         } 
-
+    
         // update travel coins of Maxwell
         int currentTravelCoins = this.maxwell.getTravelCoins();
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
+
     }
 
+    public void updateCoinsOnMissionAccept(int travelCoins) {
+        int currentTravelCoins = this.maxwell.getTravelCoins();
+
+        this.maxwell.setTravelCoins(currentTravelCoins + travelCoins);
+    }
     // Check all the possibilities to game over  
     public void checkGameOver() {
         
@@ -151,8 +157,9 @@ public class Game {
 
             if (optionInputed == 1) {
                 // Accpet mission
-                System.out.println("Missao foi aceita");
+                acceptMission(currentCity);
             } else if(optionInputed == 2) {
+                // Reject mission
                 System.out.println("Missao foi negada");
             } else {
                 System.out.println("Opção inválida");
@@ -161,4 +168,12 @@ public class Game {
         } 
     }
 
+    public void acceptMission(City currentCity) {
+        City maxwellCity = this.maxwell.getCurrentCity();
+
+        System.out.println("Missao foi aceita");
+        this.maxwell.setOnMission(true);
+        this.maxwell.setCurrentMisson(maxwellCity.getMission());
+        updateCoinsOnMissionAccept(currentCity.getMission().getTravelCoinsToAccept());
+    }
 }

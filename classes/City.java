@@ -9,6 +9,7 @@ public class City {
     private String[] rules;
     private Merchant merchant;
     private int powerUp;
+    private Mission mission;
 
     public City(String name, boolean hasMission, String[] rules, Merchant merchant, int powerUp) {
         this.name = name;
@@ -43,6 +44,14 @@ public class City {
 
     public int getPowerUp() {
         return powerUp;
+    }
+
+    public Mission getMission() {
+        return mission;
+    }
+
+    public void setMission(Mission mission) {
+        this.mission = mission;
     }
 
 }
