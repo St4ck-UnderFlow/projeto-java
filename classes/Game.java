@@ -151,6 +151,16 @@ public class Game {
     // Options related to change, accept, reject or abort a mission
     public void checkMission(City currentCity) {
        
+        if (this.maxwell.isOnMission()) {
+            if (this.maxwell.getCurrentMisson().getCityTarget() == currentCity) {
+                menu.clearTerminal();
+                Mission mission = this.maxwell.getCurrentMisson();
+                System.out.println("Missão de " + mission.getCityTarget().getName() + " finalizada");
+                this.maxwell.setCurrentMisson(null);
+                this.maxwell.setOnMission(false);
+            }
+        }
+
         if (currentCity.hasMission) {
             
             menu.acceptMissionMenu(currentCity.getMission());
@@ -180,6 +190,7 @@ public class Game {
             }   
 
         } 
+    
     }
 
     public void abortCurrentMission() {

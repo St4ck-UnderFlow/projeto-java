@@ -142,11 +142,11 @@ public class Map {
     }
 
     public void setMissionsToCities() {
-        Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!");
+        Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!", kalb);
 
-        Mission defalsiaMission = new Mission(6, 3, 1, "Vá para a cidade de Principality of Kasya e receba as Botas Do Poder !!!!");
+        Mission defalsiaMission = new Mission(6, 3, 1, "Vá para a cidade de Principality of Kasya e receba as Botas Do Poder !!!!", kasya);
 
-        Mission vuneseMission = new Mission(1, 10, -4, "Vá para a cidade de Ubud e receba a Glória Dos Retornados !!!!");
+        Mission vuneseMission = new Mission(1, 10, -4, "Vá para a cidade de Ubud e receba a Glória Dos Retornados !!!!", ubud);
 
         this.kalb.setMission(kalbMission); 
         this.defalsia.setMission(defalsiaMission);
