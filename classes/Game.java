@@ -96,6 +96,7 @@ public class Game {
         }
     }
 
+    // Updates Maxwell's power and travel coins
     public void updatedMaxwellInfosWhenAriveOnCity(int power, int travelCoins) {
 
         // update current power of Maxwell 
@@ -113,6 +114,7 @@ public class Game {
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
     }
 
+    // Sums Maxwell's travel coins with the ones the mission gives when accepted
     public void updateTravelCoinsWhenAcceptMission(int travelCoins) {
         int currentTravelCoins = this.maxwell.getTravelCoins();
         this.maxwell.setTravelCoins(currentTravelCoins + travelCoins);
@@ -143,9 +145,11 @@ public class Game {
         }
     }
 
+    // Options related to change, accept, reject or abort a mission
     public void checkMission(City currentCity) {
        
         if (currentCity.hasMission) {
+            
             menu.acceptMissionMenu();
 
             ArrayList<Number> options= new ArrayList<Number>();
@@ -155,18 +159,27 @@ public class Game {
             int optionInputed = menu.requestInputNumber(options);
 
             if (optionInputed == 1) {
-                // Accpet mission
-                acceptMission(currentCity);
+                // Accept mission
+                if (!this.maxwell.isOnMission()) {
+                    acceptMission(currentCity);
+                }
+               
+                // When Maxwell already has a mission and wants to change
+                else if  (this.maxwell.isOnMission() && wantsChangeCurrentMission()) {
+                    acceptMission(currentCity);
+                }
+
             } else if(optionInputed == 2) {
                 // Reject mission
                 System.out.println("Missao foi negada");
             } else {
                 System.out.println("Opção inválida");
-            }
+            }   
 
         } 
     }
 
+    
     public void abortCurrentMission() {
         this.maxwell.setCurrentMisson(null);
         this.maxwell.setOnMission(false);
@@ -174,14 +187,47 @@ public class Game {
 
     public void acceptMission(City currentCity) {
         menu.clearTerminal();
+
         City maxwellCity = this.maxwell.getCurrentCity();
+    
         System.out.println("<< Missao foi aceita >>");
         System.out.println(" ");
+    
         this.maxwell.setOnMission(true);
         this.maxwell.setCurrentMisson(maxwellCity.getMission());
-
+    
         // update Maxwell's travel coins 
         int travelCoinsToAccept = currentCity.getMission().getTravelCoinsToAccept();
         updateTravelCoinsWhenAcceptMission(travelCoinsToAccept);
+
+    }
+
+    public boolean wantsChangeCurrentMission() {
+
+        boolean wantChange = false;
+
+        while (true) {
+            System.out.println(" ");
+            this.menu.changeMissionsConfirmation();
+
+            ArrayList<Number> options= new ArrayList<Number>();
+            options.add(0, 1);
+            options.add(0, 2);
+
+            int optionInputed = menu.requestInputNumber(options);
+
+            if (optionInputed == 1) {
+                wantChange = true;
+                break;
+            } else if (optionInputed == 2) {
+                wantChange = false;
+                break;
+            }  else {
+                System.out.println("Opcao inválida");
+                continue;
+            }  
+        } 
+
+        return wantChange;
     }
 }

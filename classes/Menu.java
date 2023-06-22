@@ -80,6 +80,23 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
  
+    public void changeMissionsConfirmation() {
+
+        String redColorCode = "\u001B[31m";
+        String resetColorCode = "\u001B[0m";
+
+        System.out.println(" ");
+        System.out.println("===========================================");
+        System.out.println(redColorCode + "VOCÊ JA ESTA COM UMA MISSÃO !!" + resetColorCode);
+        System.out.println("DESEJA TROCAR A ATUAL PELA DESSA CIDADE ?");
+        System.out.println("[1] - SIM");
+        System.out.println("[2] - NÃO");
+        System.out.println("===========================================");
+        System.out.println(" ");
+        System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
+
+    }
+
     public void onMissionMenu(Maxwell maxwell) {
         
         String greenColorCode = "\u001B[32m";
