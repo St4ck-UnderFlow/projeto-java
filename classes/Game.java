@@ -168,8 +168,10 @@ public class Game {
     }
 
     public void acceptMission(City currentCity) {
+        menu.clearTerminal();
         City maxwellCity = this.maxwell.getCurrentCity();
-        System.out.println("Missao foi aceita");
+        System.out.println("<< Missao foi aceita >>");
+        System.out.println(" ");
         this.maxwell.setOnMission(true);
         this.maxwell.setCurrentMisson(maxwellCity.getMission());
 

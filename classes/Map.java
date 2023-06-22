@@ -21,17 +21,17 @@ public class Map {
 
     public City defalsia = new City("Defalsia", true, null, null, -3);
 
-    public City aymarLeague = new City("Aymar League", true, null, null, 1);
+    public City aymarLeague = new City("Aymar League", false, null, null, 1);
 
-    public City kalb = new City("Kingdom of Kalb", false, null, null, 2);
+    public City kalb = new City("Kingdom of Kalb", true, null, null, 2);
 
     public City vuneseEmpire = new City("Vunese of Empire", true, null, null, 0);
 
     public City karhora = new City("Principality of Karhora", false, null, null, -2);
 
-    public City nargumun = new City("Nargumun", true, null, null, 0);
+    public City nargumun = new City("Nargumun", false, null, null, 0);
 
-    public City bun = new City("Bun", true, null, null, 5);
+    public City bun = new City("Bun", false, null, null, 5);
 
     public City chandirSultanate = new City("Chandir Sultanate", false, null, null, 1);
 

@@ -29,6 +29,7 @@ public class Menu {
         String greenColorCode = "\u001B[32m";
         String resetColorCode = "\u001B[0m";
 
+
         String cityName = maxwell.getCurrentCity().getName();
 
         System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
@@ -69,6 +70,7 @@ public class Menu {
 
     // Option menu the player receive when arriving in a city with misson
     public void acceptMissionMenu() {
+        System.out.println(" ");
         System.out.println("=====================================");
         System.out.println("Sua cidade atual possui uma missão");
         System.out.println("[1] Aceitar");
@@ -79,7 +81,9 @@ public class Menu {
     }
  
     public void onMissionMenu(Maxwell maxwell) {
+        
         String greenColorCode = "\u001B[32m";
+        String blueColorCode = "\u001B[34m";
         String resetColorCode = "\u001B[0m";
 
         String cityName = maxwell.getCurrentCity().getName();
@@ -90,7 +94,7 @@ public class Menu {
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
         System.err.println("=======================================");
         System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
-        System.out.println("Missao Atual => " + maxwell.getCurrentMisson().getGoal());
+        System.out.println("Missao Atual => " + blueColorCode + maxwell.getCurrentMisson().getGoal() + resetColorCode);
         System.out.println("=======================================");
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
         System.out.println("++++++++++++++++++++++++++++++");
