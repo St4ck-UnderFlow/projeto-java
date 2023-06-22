@@ -146,7 +146,7 @@ public class Map {
 
         Mission defalsiaMission = new Mission(6, 3, 1, "Vá para a cidade de Principality of Kasya e receba as Botas Do Poder !!!!");
 
-        Mission vuneseMission = new Mission(1, 10, 4, "Vá para a cidade de Ubud e receba a Glória Dos Retornados !!!!");
+        Mission vuneseMission = new Mission(1, 10, -4, "Vá para a cidade de Ubud e receba a Glória Dos Retornados !!!!");
 
         this.kalb.setMission(kalbMission); 
         this.defalsia.setMission(defalsiaMission);

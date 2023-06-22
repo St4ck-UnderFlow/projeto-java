@@ -20,5 +20,5 @@
 - [x] When the amount of power override the threshold, the game must be finished
 - [x] When the player cancel the mission and return to the city of the mission, the mission shouldn't be avaliable anymore
 
-- [ ] When the player accept the mission, have to show the rewards reward for accepting the mission and completion
+- [ ] When the player accept the mission, have to show the rewards: reward for accepting the mission and completion
 - [ ] When reaching the objective of the mission, she has to complete

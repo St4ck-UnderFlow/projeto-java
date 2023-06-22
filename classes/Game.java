@@ -153,7 +153,7 @@ public class Game {
        
         if (currentCity.hasMission) {
             
-            menu.acceptMissionMenu();
+            menu.acceptMissionMenu(currentCity.getMission());
 
             ArrayList<Number> options= new ArrayList<Number>();
             options.add(0, 1);

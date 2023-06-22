@@ -69,10 +69,19 @@ public class Menu {
     }
 
     // Option menu the player receive when arriving in a city with misson
-    public void acceptMissionMenu() {
+    public void acceptMissionMenu(Mission mission) {
+
+        String colorYellowCode = "\u001B[33m";
+        String resetColorCode = "\u001B[0m";
+
         System.out.println(" ");
         System.out.println("=====================================");
         System.out.println("Sua cidade atual possui uma missão");
+        System.out.println(" ");
+        System.out.println("  |+ OBJETIVO => " +colorYellowCode+ mission.getGoal() +resetColorCode);
+        System.out.println("  |+ RECOMPENSA POR ACEITAR => " +colorYellowCode+ mission.getTravelCoinsToAccept() + " moedas de transporte" +resetColorCode);
+        System.out.println("  |+ RECOMPENSA POR CONCLUIR => " +colorYellowCode+ mission.getTravelCoinsToComplete() + " Moedas de Transporte e " + mission.getThresholdToComplete() + " de Limiar Total" + resetColorCode);
+        System.out.println(" ");
         System.out.println("[1] Aceitar");
         System.out.println("[2] Recusar");
         System.out.println("=====================================");
