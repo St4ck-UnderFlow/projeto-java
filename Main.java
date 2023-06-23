@@ -12,6 +12,9 @@ public class Main {
         ArrayList<Number> options= new ArrayList<Number>();
         options.add(0, 1);
         options.add(0, 2);
+        options.add(0, 1);
+
+        menu.clearTerminal();
 
         while (true) {
             menu.startMenu();
@@ -24,11 +27,18 @@ public class Main {
                     game.run();
                     break;
                 case 2:
+                    // "About" option
+                    menu.clearTerminal();
+                    menu.aboutGameMenu();
+                    break;
+                case 3:
                     // "Leave" option
+                    menu.clearTerminal();
                     System.out.println("JÁ DESISTIU ???");
-                    break; 
+                    break;    
                 default:
-                    // "Invalid Number" option
+                    // "Invalid" option
+                    menu.clearTerminal();
                     continue;
             }
         } 

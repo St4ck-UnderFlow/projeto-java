@@ -9,11 +9,22 @@ public class Menu {
 
     // Menu Screen | can start the game or leave 
     public void startMenu() {
-        clearTerminal();
         System.out.println("===== BEM-VINDO, VIAJANTE !!! =====");
         System.out.println("<< Escolha uma Opção >>");
         System.out.println("1. Começar a Aventura");
-        System.out.println("2. Sair");
+        System.out.println("2. Sobre o Jogo");
+        System.out.println("3. Sair");
+    }
+
+    public void aboutGameMenu() {
+        System.out.println("Maxwell é um viajante que mora em Ubud tem o objetivo de levar uma joiá do poder para Nargumun no caminho você deve levar o maior numero de moedas com você para poder receber uma recompensa. Cada cidade que você passar tera que tomar decissões aceitando ou recusando missões pelo caminho");
+        System.out.println("");
+        System.out.println("Max devera caminhar por toda a viagem obrigando-se a pensar sabiamente qual sera a sua proxima cidade");
+        System.out.println("");
+        System.out.println("Max devera tomar cuidado com o acumulo de poder da joia pois podera trazer consequencias terriveis");
+        System.out.println("");
+        System.out.println("Max podera receber ajuda para melhorar o controle de poder da joia podendo roubar as recompensas e abandonar as missões ou ser honesto e concluir a missões para melhorar as recompensas tome suas decisões sabiamente pois uma missão abandonada não podera ser recuperada e não podera fazer mais de uma missão por vez");
+        System.out.println("");
     }
 
     // Function that clears the terminal
