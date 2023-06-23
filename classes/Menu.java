@@ -142,16 +142,15 @@ public class Menu {
 
     public int requestInputNumber(ArrayList<Number> options) {
         Scanner input = new Scanner(System.in);
-        boolean validOption = false;
         int option = 0;
 
-        while (!validOption) {
+        while (true) {
             try {
                 option = input.nextInt();
                 if (!options.contains(option)) {
                     throw new InputMismatchException(null);
                 }
-                validOption = true;
+                break;
                 
             } catch (InputMismatchException error) {
                 return options.size() + 1;
