@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.TreeMap;
+
 public class Merchant {
     private String[] questions;
     private City city;

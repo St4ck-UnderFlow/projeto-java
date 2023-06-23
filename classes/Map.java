@@ -91,6 +91,7 @@ public class Map {
         this.oldcalia.addFrontier(this.defalsia, -3);
         this.oldcalia.addFrontier(this.aymarLeague, 1);
         this.oldcalia.addFrontier(this.kalb, 2);
+        this.oldcalia.addFrontier(this.lastwatch, -2);
 
         // Frontiers Defalsia
         this.defalsia.addFrontier(this.aymarLeague, 1);
