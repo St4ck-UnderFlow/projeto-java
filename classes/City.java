@@ -18,6 +18,7 @@ public class City {
         this.rules = rules;
         this.merchant = merchant;
         this.powerUp = powerUp;
+        this.merchant = new Merchant();
     }
 
     public String getName() {
