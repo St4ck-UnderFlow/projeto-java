@@ -5,7 +5,7 @@ public class Mission {
     private int travelCoinsToComplete; // prize to complete a misson ( + travel coins)
     private int thresholdToComplete; // prize to complete a misson ( + Threshold)
     private String goal; // goal of the mission
-    private City cityTarget;
+    private City cityTarget; // The city Maxwell needs to arive in order to complete the mission
     
     public Mission(int travelCoinsToAccept, int travelCoinsToComplete, int thresholdToComplete, String goal, City cityTarget) {
         this.travelCoinsToAccept = travelCoinsToAccept;
