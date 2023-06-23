@@ -195,7 +195,7 @@ public class Game {
 
     public void abortCurrentMission() {
         menu.clearTerminal();
-        System.out.println("Missão atual foi abortada");
+        System.out.println("<<Missão Atual foi Abortada>>");
         this.maxwell.setCurrentMisson(null);
         this.maxwell.setOnMission(false);
     }

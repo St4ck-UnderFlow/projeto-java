@@ -17,13 +17,19 @@ public class Menu {
     }
 
     public void aboutGameMenu() {
-        System.out.println("Maxwell é um viajante que mora em Ubud tem o objetivo de levar uma joiá do poder para Nargumun no caminho você deve levar o maior numero de moedas com você para poder receber uma recompensa. Cada cidade que você passar tera que tomar decissões aceitando ou recusando missões pelo caminho");
+        System.out.println(" => Maxwell é um viajante que mora em Ubud, ele tem o objetivo de levar uma joiá do poder para Nargumun.");
         System.out.println("");
-        System.out.println("Max devera caminhar por toda a viagem obrigando-se a pensar sabiamente qual sera a sua proxima cidade");
+        System.out.println(" => No caminho você deve acumular o maior número possivel de moedas para poder receber uma recompensa em Nargumun (dependendo da quantidade a recompensa muda).");
         System.out.println("");
-        System.out.println("Max devera tomar cuidado com o acumulo de poder da joia pois podera trazer consequencias terriveis");
+        System.out.println(" => Em algumas cidades que você passar, terá que tomar decisões (aceitar ou recusar missões) pelo caminho.");
         System.out.println("");
-        System.out.println("Max podera receber ajuda para melhorar o controle de poder da joia podendo roubar as recompensas e abandonar as missões ou ser honesto e concluir a missões para melhorar as recompensas tome suas decisões sabiamente pois uma missão abandonada não podera ser recuperada e não podera fazer mais de uma missão por vez");
+        System.out.println(" => Maxwell deverá caminhar por toda a viagem obrigando-se a pensar sabiamente qual será sua proxima cidade.");
+        System.out.println("");
+        System.out.println(" => Ele deverá tomar cuidado com o acumulo de poder da joia, pois poderá trazer consequências terriveis (se ultrapassar o Limiar Maximo, Maxwell morrerá).");
+        System.out.println("");
+        System.out.println(" => Max poderá receber ajuda para melhorar o controle de poder da joia, podendo 'roubar' as recompensas e abandonar as missões ou ser honesto e concluir as missões para melhorar as recompensas finais.");
+        System.out.println("");
+        System.out.println(" => Tome suas decisões sabiamente, pois uma missão abandonada não poderá ser recuperada e a quantidade de missões que se pode ter por vez é apenas uma");
         System.out.println("");
     }
 
