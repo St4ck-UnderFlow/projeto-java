@@ -193,6 +193,7 @@ public class Game {
     
     }
 
+    // Function for aborting the current mission
     public void abortCurrentMission() {
         menu.clearTerminal();
         System.out.println("<<Missão Atual foi Abortada>>");
@@ -200,6 +201,7 @@ public class Game {
         this.maxwell.setOnMission(false);
     }
 
+    // Function for accepting a mission 
     public void acceptMission(City currentCity) {
         menu.clearTerminal();
 
@@ -217,6 +219,7 @@ public class Game {
 
     }
 
+    // Function that changes one mission for another, if the player desires
     public boolean wantsChangeCurrentMission() {
 
         boolean wantChange = false;
