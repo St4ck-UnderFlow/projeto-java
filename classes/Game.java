@@ -76,11 +76,12 @@ public class Game {
 
             // Check if the current city misison is already accepeted/completed
             currentCity.blockGetMissionAgain();
-    
+            
+            // Shows the Menu to travel from one city to another
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins, currentThreshold);
     
-            // Ask which city the player wants to go
+            // Ask which city the player wants to go and travels to it
             System.out.println(" ");
             System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
             int cityIndexChoiceInput = input.nextInt();
@@ -126,6 +127,10 @@ public class Game {
     
     // Check all the possibilities to game over  
     public void checkGameOver() {
+
+        String greenColorCode = "\u001B[32m";
+        String redColorCode = "\u001B[31m";
+        String resetColorCode = "\u001B[0m";
         
         int currentPower = this.maxwell.getPower();
         int currentThreshold = this.maxwell.getCurrentThreshold();
@@ -134,17 +139,26 @@ public class Game {
         City currentCity = this.maxwell.getCurrentCity();
 
         if (currentPower > currentThreshold) {
-            System.out.println("Fim de jogo! => Limiar máximo ultrapassado");
+            System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Limiar máximo ultrapassado");
             System.exit(0);               
         } 
         
-        if (currentCity.getName() == "Nargumun" && currentTravelCoins < 4) {
-            System.out.println("Fim de jogo! => Maxwell chegou em Nargumun, mas foi alocado como servo");
-            System.exit(0);    
+        if (currentCity.getName() == "Nargumun") {
+            if (currentTravelCoins < 4) {
+                System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Maxwell chegou em Nargumun, mas foi alocado como" +redColorCode+ " SERVO DA COROA" +resetColorCode); 
+            } else if (currentTravelCoins >= 4 && currentTravelCoins <= 10) {
+                System.out.println(greenColorCode + "JOGO CONCLUIDO !!!" + resetColorCode);
+                System.out.println("Maxwell chegou em Nargumun e foi condecorado" +greenColorCode+" LORDE" + resetColorCode);
+            } else if (currentTravelCoins > 10) {
+                System.out.println(greenColorCode + "JOGO CONCLUIDO !!!" + resetColorCode);
+                System.out.println("Maxwell chegou em Nargumun e foi coroado" +greenColorCode+" REI DE NARGUMUN" + resetColorCode);
+            }
+            System.exit(0);  
         }
 
+
         if (currentTravelCoins < 0) {
-            System.out.println("Fim de Jogo ! => Maxwell ficou sem Moedas de Transporte");
+            System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Maxwell ficou sem Moedas de Transporte");
             System.exit(0);
         }
     }
