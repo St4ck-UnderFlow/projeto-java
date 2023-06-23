@@ -67,7 +67,7 @@ public class Menu {
     }
     
     // Menu that shows the cities frontiers, as well as the current city, power and travel coins
-    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins) {
+    public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins, int threshold) {
       
         String greenColorCode = "\u001B[32m";
         String redColorCode = "\u001B[31m";
@@ -76,6 +76,7 @@ public class Menu {
         System.out.println("Cidade Atual => " + greenColorCode + currentCity.getName()+ resetColorCode);
         System.out.println("Moedas de Transporte Atual => " + redColorCode + travelCoins + resetColorCode);
         System.out.println("Poder Atual => " + redColorCode + power + resetColorCode);
+        System.out.println("Limiar Atual => " + redColorCode + threshold + resetColorCode);
 
         System.out.println(" ");
 

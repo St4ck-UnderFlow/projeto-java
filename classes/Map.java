@@ -142,7 +142,7 @@ public class Map {
     }
 
     public void setMissionsToCities() {
-        Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!", kalb);
+        Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!", smalia);
 
         Mission defalsiaMission = new Mission(6, 3, 1, "Vá para a cidade de Principality of Kasya e receba as Botas Do Poder !!!!", kasya);
 

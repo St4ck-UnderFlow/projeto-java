@@ -72,12 +72,13 @@ public class Game {
             City currentCity = this.maxwell.getCurrentCity();
             int currentPower = this.maxwell.getPower();
             int currentTravelCoins = this.maxwell.getTravelCoins();
+            int currentThreshold = this.maxwell.getCurrentThreshold();
 
             // Check if the current city misison is already accepeted/completed
             currentCity.blockGetMissionAgain();
     
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
-            menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins);
+            menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins, currentThreshold);
     
             // Ask which city the player wants to go
             System.out.println(" ");
