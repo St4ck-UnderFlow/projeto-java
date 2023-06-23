@@ -6,16 +6,14 @@ public class City {
     private String name;
     private ArrayList<Frontier> frontiers;
     public boolean hasMission;
-    private String[] rules;
     private Merchant merchant;
     private int powerUp;
     private Mission mission;
 
-    public City(String name, boolean hasMission, String[] rules, Merchant merchant, int powerUp) {
+    public City(String name, boolean hasMission, Merchant merchant, int powerUp) {
         this.name = name;
         this.frontiers = new ArrayList<Frontier>();
         this.hasMission = hasMission;
-        this.rules = rules;
         this.merchant = merchant;
         this.powerUp = powerUp;
     }
@@ -36,10 +34,6 @@ public class City {
 
     public ArrayList<Frontier> getFrontiers() {
         return frontiers;
-    }
-
-    public String[] getRules() {
-        return rules;
     }
 
     public int getPowerUp() {

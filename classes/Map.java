@@ -3,39 +3,39 @@ package classes;
 import java.util.ArrayList;
 
 public class Map {
-    public City ubud = new City("Ubud", false, null, null, 0);
+    public City ubud = new City("Ubud", false, null, 0);
 
-    public City nekika = new City("Principality of Nekikh", false, null, null, 1);
+    public City nekika = new City("Principality of Nekikh", false, null, 1);
 
-    public City legmod = new City("Kingdom of Legmod", false, null, null, 2);
+    public City legmod = new City("Kingdom of Legmod", false, null, 2);
 
-    public City gritestar = new City("Principality of Gritesthr", false, null, null, 5);
+    public City gritestar = new City("Principality of Gritesthr", false, null, 5);
 
-    public City drogove = new City("Protectorate of Dogrove", false, null, null, 3);
+    public City drogove = new City("Protectorate of Dogrove", false, null, 3);
 
-    public City oldcalia = new City("Kingdom of Oldcalia", false, null, null, 4);
+    public City oldcalia = new City("Kingdom of Oldcalia", false, null, 4);
 
-    public City lastwatch = new City("Kingdom of Lastwatch", false, null, null, -2);
+    public City lastwatch = new City("Kingdom of Lastwatch", false, null, -2);
 
-    public City smalia = new City("Grand Duchy of Smalia", false, null, null, 1);
+    public City smalia = new City("Grand Duchy of Smalia", false, null, 1);
 
-    public City defalsia = new City("Defalsia", true, null, null, -3);
+    public City defalsia = new City("Defalsia", true, null, -3);
 
-    public City aymarLeague = new City("Aymar League", false, null, null, 1);
+    public City aymarLeague = new City("Aymar League", false, null, 1);
 
-    public City kalb = new City("Kingdom of Kalb", true, null, null, 2);
+    public City kalb = new City("Kingdom of Kalb", true, null, 2);
 
-    public City vuneseEmpire = new City("Vunese of Empire", true, null, null, 0);
+    public City vuneseEmpire = new City("Vunese of Empire", true, null, 0);
 
-    public City karhora = new City("Principality of Karhora", false, null, null, -2);
+    public City karhora = new City("Principality of Karhora", false, null, -2);
 
-    public City nargumun = new City("Nargumun", false, null, null, 0);
+    public City nargumun = new City("Nargumun", false, null, 0);
 
-    public City bun = new City("Bun", false, null, null, 5);
+    public City bun = new City("Bun", false, null, 5);
 
-    public City chandirSultanate = new City("Chandir Sultanate", false, null, null, 1);
+    public City chandirSultanate = new City("Chandir Sultanate", false, null, 1);
 
-    public City kasya = new City("Principality of Kasya", false, null, null, -7);
+    public City kasya = new City("Principality of Kasya", false, null, -7);
 
     public ArrayList<City> cities;
 
@@ -79,6 +79,7 @@ public class Map {
         this.lastwatch.addFrontier(this.gritestar, 5);
         this.lastwatch.addFrontier(this.drogove, 3);
         this.lastwatch.addFrontier(this.smalia, 1);
+        this.lastwatch.addFrontier(this.oldcalia, 4);
 
         // Frontiers Smalia
         this.smalia.addFrontier(this.lastwatch, -2);
