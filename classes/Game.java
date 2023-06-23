@@ -152,12 +152,11 @@ public class Game {
     public void checkMission(City currentCity) {
        
         if (this.maxwell.isOnMission()) {
-            if (this.maxwell.getCurrentMisson().getCityTarget() == currentCity) {
+            Mission currentMission = this.maxwell.getCurrentMisson();
+            if (currentMission.getCityTarget() == currentCity) {
+                // When Maxwell arives at target City of his current mission
                 menu.clearTerminal();
-                Mission mission = this.maxwell.getCurrentMisson();
-                System.out.println("Missão de " + mission.getCityTarget().getName() + " finalizada");
-                this.maxwell.setCurrentMisson(null);
-                this.maxwell.setOnMission(false);
+                currentMission.complete(maxwell);
             }
         }
 

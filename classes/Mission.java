@@ -34,4 +34,21 @@ public class Mission {
     public City getCityTarget() {
         return cityTarget;
     }
+
+    public void reward(Maxwell maxwell) {
+        int currentTravelCoins = maxwell.getTravelCoins();
+        int currentThreshold = maxwell.getCurrentThreshold();
+        maxwell.setTravelCoins(currentTravelCoins + this.travelCoinsToComplete);
+        maxwell.setCurrentThreshold(currentThreshold + this.thresholdToComplete);
+    }
+
+    public void complete(Maxwell maxwell) {
+        Mission mission = maxwell.getCurrentMisson();
+        System.out.println("Missão de " + mission.getCityTarget().getName() + " finalizada");
+        maxwell.getCurrentMisson().reward(maxwell);
+
+        // Reset current mission of Maxwell
+        maxwell.setCurrentMisson(null);
+        maxwell.setOnMission(false);
+    }
 }

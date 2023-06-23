@@ -35,7 +35,7 @@ public class Main {
                     // "Leave" option
                     menu.clearTerminal();
                     System.out.println("JÁ DESISTIU ???");
-                    System.exit(option);
+                    System.exit(0);
                 default:
                     // "Invalid" option
                     menu.clearTerminal();
