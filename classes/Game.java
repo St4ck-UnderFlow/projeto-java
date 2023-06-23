@@ -90,7 +90,7 @@ public class Game {
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
             
             updatedMaxwellInfosWhenAriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
-
+            
             checkGameOver();
             checkMission(this.maxwell.getCurrentCity());
 
