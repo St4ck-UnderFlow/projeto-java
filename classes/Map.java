@@ -154,4 +154,5 @@ public class Map {
         this.defalsia.setMission(defalsiaMission);
         this.vuneseEmpire.setMission(vuneseMission);
     }
+
 }

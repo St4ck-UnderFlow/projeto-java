@@ -16,6 +16,7 @@ public class City {
         this.hasMission = hasMission;
         this.merchant = merchant;
         this.powerUp = powerUp;
+        this.merchant = new Merchant();
     }
 
     public String getName() {

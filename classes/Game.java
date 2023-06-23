@@ -94,6 +94,11 @@ public class Game {
             checkGameOver();
             checkMission(this.maxwell.getCurrentCity());
 
+            // Asks from Merchant
+            Merchant merchant = this.maxwell.getCurrentCity().getMerchant();
+            StringBuilder answears = merchant.askQuestions();
+            merchant.giveReward(answears);
+
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
         } catch (InputMismatchException error) {
