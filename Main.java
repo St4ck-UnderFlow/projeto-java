@@ -12,7 +12,7 @@ public class Main {
         ArrayList<Number> options= new ArrayList<Number>();
         options.add(0, 1);
         options.add(0, 2);
-        options.add(0, 1);
+        options.add(0, 3);
 
         menu.clearTerminal();
 
@@ -35,7 +35,7 @@ public class Main {
                     // "Leave" option
                     menu.clearTerminal();
                     System.out.println("JÁ DESISTIU ???");
-                    break;    
+                    System.exit(option);
                 default:
                     // "Invalid" option
                     menu.clearTerminal();
