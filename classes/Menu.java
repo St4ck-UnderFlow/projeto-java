@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 
 public class Menu {
+    String merchantText = textWithColor("[MERCADOR]", "BLUE");
 
     // Menu Screen | can start the game or leave 
     public void startMenu() {
@@ -43,6 +44,7 @@ public class Menu {
         String greenColorCode = "\u001B[32m";
         String blueColorCode = "\u001B[34m";
         String colorYellowCode = "\u001B[33m";
+        String redColorCode = "\u001B[31m";
 
         String resetColorCode = "\u001B[0m";
 
@@ -54,6 +56,8 @@ public class Menu {
             textFormated = blueColorCode + text + resetColorCode;
         } else if (color.toUpperCase() == "YELLOW") {
             textFormated = colorYellowCode + text + resetColorCode;
+        } else if (color.toUpperCase() == "RED") {
+            textFormated = redColorCode + text + resetColorCode;
         }
 
         return textFormated;
@@ -61,15 +65,9 @@ public class Menu {
 
     // using when the user start the game and when he arives in a city;
     public void defaultMenu(Maxwell maxwell) {
-       
-
-        String greenColorCode = "\u001B[32m";
-        String resetColorCode = "\u001B[0m";
-
-
         String cityName = maxwell.getCurrentCity().getName();
 
-        System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
+        System.out.println("=== Bem-Vindo à " + textWithColor(cityName, "GREEN") + " ===");
         System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
         System.out.println("Quantidade de poder => " + maxwell.getPower());  
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
@@ -88,15 +86,16 @@ public class Menu {
     
     // Menu that shows the cities frontiers, as well as the current city, power and travel coins
     public void travelMenu(ArrayList<Frontier> frontiers, City currentCity, int power, int travelCoins, int threshold) {
-      
-        String greenColorCode = "\u001B[32m";
-        String redColorCode = "\u001B[31m";
-        String resetColorCode = "\u001B[0m";
 
-        System.out.println("Cidade Atual => " + greenColorCode + currentCity.getName()+ resetColorCode);
-        System.out.println("Moedas de Transporte Atual => " + redColorCode + travelCoins + resetColorCode);
-        System.out.println("Poder Atual => " + redColorCode + power + resetColorCode);
-        System.out.println("Limiar Atual => " + redColorCode + threshold + resetColorCode);
+        String cityName = currentCity.getName();
+        String stringTravelCoins = Integer.toString(travelCoins);
+        String stringPower = Integer.toString(power);
+        String stringThreshold = Integer.toString(threshold);
+
+        System.out.println("Cidade Atual => " + textWithColor(cityName, "GREEN"));
+        System.out.println("Moedas de Transporte Atual => " + textWithColor(stringTravelCoins, "RED"));
+        System.out.println("Poder Atual => " + textWithColor(stringPower, "RED"));
+        System.out.println("Limiar Atual => " + textWithColor(stringThreshold, "RED"));
 
         System.out.println(" ");
 
@@ -108,17 +107,19 @@ public class Menu {
 
     // Option menu the player receive when arriving in a city with misson
     public void acceptMissionMenu(Mission mission) {
-
-        String colorYellowCode = "\u001B[33m";
-        String resetColorCode = "\u001B[0m";
+        
+        String missionGoal = mission.getGoal();
+        String stringTravelCoinsToAccept = Integer.toString(mission.getTravelCoinsToAccept());
+        String stringTravelCoinsToComplete = Integer.toString(mission.getTravelCoinsToComplete());
+        String stringThrasholdToComplete = Integer.toString(mission.getThresholdToComplete());
 
         System.out.println(" ");
         System.out.println("=====================================");
         System.out.println("Sua cidade atual possui uma missão");
         System.out.println(" ");
-        System.out.println("  |+ OBJETIVO => " +colorYellowCode+ mission.getGoal() +resetColorCode);
-        System.out.println("  |+ RECOMPENSA POR ACEITAR => " +colorYellowCode+ mission.getTravelCoinsToAccept() + " moedas de transporte" +resetColorCode);
-        System.out.println("  |+ RECOMPENSA POR CONCLUIR => " +colorYellowCode+ mission.getTravelCoinsToComplete() + " Moedas de Transporte e " + mission.getThresholdToComplete() + " de Limiar Total" + resetColorCode);
+        System.out.println("  |+ OBJETIVO => " + textWithColor(missionGoal, "YELLOW"));
+        System.out.println("  |+ RECOMPENSA POR ACEITAR => " + textWithColor(stringTravelCoinsToAccept + " Moedas de Transporte", "YELLOW"));
+        System.out.println("  |+ RECOMPENSA POR CONCLUIR => " + textWithColor(stringTravelCoinsToComplete + " Moedas de Transporte " + "e " + stringThrasholdToComplete + " de Limiar Total", "YELLOW"));
         System.out.println(" ");
         System.out.println("[1] Aceitar");
         System.out.println("[2] Recusar");
@@ -128,37 +129,29 @@ public class Menu {
     }
  
     public void changeMissionsConfirmation() {
-
-        String redColorCode = "\u001B[31m";
-        String resetColorCode = "\u001B[0m";
-
         System.out.println(" ");
         System.out.println("===========================================");
-        System.out.println(redColorCode + "VOCÊ JÁ ESTA COM UMA MISSÃO !!" + resetColorCode);
+        System.out.println(textWithColor("VOCÊ JÁ ESTA COM UMA MISSÃO !!", "RED"));
         System.out.println("DESEJA TROCAR A ATUAL PELA DESSA CIDADE ?");
         System.out.println("[1] - SIM");
         System.out.println("[2] - NÃO");
         System.out.println("===========================================");
         System.out.println(" ");
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
-
     }
 
     public void onMissionMenu(Maxwell maxwell) {
-        
-        String greenColorCode = "\u001B[32m";
-        String blueColorCode = "\u001B[34m";
-        String resetColorCode = "\u001B[0m";
 
         String cityName = maxwell.getCurrentCity().getName();
+        String missionGoal = maxwell.getCurrentMisson().getGoal();
 
-        System.out.println("=== Bem-Vindo à " + greenColorCode + cityName + resetColorCode + " ===");
+        System.out.println("=== Bem-Vindo à " + textWithColor(cityName, "GREEN") + " ===");
         System.out.println("Moedas de transporte => " + maxwell.getTravelCoins());  
         System.out.println("Quantidade de poder => " + maxwell.getPower());  
         System.out.println("Limiar da joia => " + maxwell.getCurrentThreshold());  
         System.err.println("=======================================");
         System.out.println("Cidade Atual => " + maxwell.getCurrentCity().getName());
-        System.out.println("Missao Atual => " + blueColorCode + maxwell.getCurrentMisson().getGoal() + resetColorCode);
+        System.out.println("Missao Atual => " + textWithColor(missionGoal, "BLUE"));
         System.out.println("=======================================");
         System.out.println("Objetivo do Jogo => " + maxwell.getGoal());
         System.out.println("++++++++++++++++++++++++++++++");
@@ -196,5 +189,49 @@ public class Menu {
         }
         
         return option;
+    }
+
+    public void merchantFirstQuestion() {
+        System.out.println("==================================================");
+        System.out.println(merchantText + " Quantas moedas de transporte você tem?");
+        System.out.println("==================================================");
+        System.out.println(" ");
+        System.out.println("<< DIGITE O VALOR >>");
+    }
+
+    public void merchantSecondQuestion() {
+        System.out.println("==================================================");
+        System.out.println(merchantText + " Quer trocar moeda por poder?");
+        System.out.println("==================================================");
+        System.out.println("[1] - SIM");
+        System.out.println("[0] - NAO");
+        System.out.println("==================================================");
+        System.out.println(" ");
+        System.out.println("<< SELECIONE A OPÇÃO DESEJADA >>");
+    }
+
+    public void rewardMessage(String answearFormated) {
+        switch(answearFormated) {
+            case "R1":
+                System.out.println(" ");
+                System.out.println(merchantText + " Você ganhou " + textWithColor("2 Moedas de Transporte", "GREEN"));
+                System.out.println(" ");
+                break;
+            case "R2":
+                System.out.println(" ");
+                System.out.println(merchantText + " Você ganhou " + textWithColor("2 de Limiar de Poder ", "GREEN")+ "e perdeu" + textWithColor(" 1 Moeda de Transporte ", "RED"));
+                System.out.println(" ");
+                break;
+            case "R3":
+                System.out.println(" ");
+                System.out.println(merchantText + " Você perdeu " + textWithColor("2 Moedas de Transporte" , "RED"));
+                System.out.println(" ");
+                break;
+            case "R4":
+                System.out.println(" ");
+                System.out.println(merchantText + " Você perdeu " + textWithColor("2 Moedas de Transporte ", "RED") + "e ganhou " + textWithColor("2 de Limiar de Poder", "GREEN"));
+                System.out.println(" ");
+                break;
+        }
     }
 }
