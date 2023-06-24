@@ -39,6 +39,26 @@ public class Menu {
         System.out.flush();
     }
 
+    public String textWithColor(String text, String color) {
+        String greenColorCode = "\u001B[32m";
+        String blueColorCode = "\u001B[34m";
+        String colorYellowCode = "\u001B[33m";
+
+        String resetColorCode = "\u001B[0m";
+
+        String textFormated = text;
+
+        if (color.toUpperCase() == "GREEN") {
+            textFormated = greenColorCode + text + resetColorCode;
+        } else if (color.toUpperCase() == "BLUE") {
+            textFormated = blueColorCode + text + resetColorCode;
+        } else if (color.toUpperCase() == "YELLOW") {
+            textFormated = colorYellowCode + text + resetColorCode;
+        }
+
+        return textFormated;
+    }
+
     // using when the user start the game and when he arives in a city;
     public void defaultMenu(Maxwell maxwell) {
        
