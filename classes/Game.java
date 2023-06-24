@@ -82,11 +82,10 @@ public class Game {
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins, currentThreshold);
     
             // Ask which city the player wants to go and travels to it
-            System.out.println(" ");
-            System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
             int cityIndexChoiceInput = input.nextInt();
-            
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
+
+            // Update Maxwell's infos
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
             updatedMaxwellInfosWhenAriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
 
@@ -99,7 +98,6 @@ public class Game {
 
             checkMission(this.maxwell.getCurrentCity());
 
-
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
         } catch (InputMismatchException error) {
@@ -110,17 +108,17 @@ public class Game {
     // Updates Maxwell's power and travel coins
     public void updatedMaxwellInfosWhenAriveOnCity(int power, int travelCoins) {
 
-        // update current power of Maxwell 
+        // Update current power of Maxwell 
         int currentPower = this.maxwell.getPower();
         int currentPowerUptaded = currentPower + power;
 
         if (currentPowerUptaded < 0) {
             this.maxwell.setPower(0);
-        }else {
+        } else {
             this.maxwell.setPower(currentPower + power);
         } 
     
-        // update travel coins of Maxwell
+        // Update travel coins of Maxwell
         int currentTravelCoins = this.maxwell.getTravelCoins();
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
     }
@@ -134,10 +132,6 @@ public class Game {
     // Check all the possibilities to game over  
     public void checkGameOver() {
 
-        String greenColorCode = "\u001B[32m";
-        String redColorCode = "\u001B[31m";
-        String resetColorCode = "\u001B[0m";
-        
         int currentPower = this.maxwell.getPower();
         int currentThreshold = this.maxwell.getCurrentThreshold();
         int currentTravelCoins = this.maxwell.getTravelCoins();
@@ -145,26 +139,17 @@ public class Game {
         City currentCity = this.maxwell.getCurrentCity();
 
         if (currentPower > currentThreshold) {
-            System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Limiar máximo ultrapassado");
+            menu.textWithColor("Fim de jogo! => Limiar máximo ultrapassado", "RED");
             System.exit(0);               
         } 
         
         if (currentCity.getName() == "Nargumun") {
-            if (currentTravelCoins < 4) {
-                System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Maxwell chegou em Nargumun, mas foi alocado como" +redColorCode+ " SERVO DA COROA" +resetColorCode); 
-            } else if (currentTravelCoins >= 4 && currentTravelCoins <= 10) {
-                System.out.println(greenColorCode + "JOGO CONCLUIDO !!!" + resetColorCode);
-                System.out.println("Maxwell chegou em Nargumun e foi condecorado" +greenColorCode+" LORDE" + resetColorCode);
-            } else if (currentTravelCoins > 10) {
-                System.out.println(greenColorCode + "JOGO CONCLUIDO !!!" + resetColorCode);
-                System.out.println("Maxwell chegou em Nargumun e foi coroado" +greenColorCode+" REI DE NARGUMUN" + resetColorCode);
-            }
+            menu.ariveAtNargumunMessage(currentTravelCoins);
             System.exit(0);  
         }
 
-
         if (currentTravelCoins < 0) {
-            System.out.println(redColorCode +"Fim de jogo!" +resetColorCode+" => Maxwell ficou sem Moedas de Transporte");
+            System.out.println(menu.textWithColor("Fim de jogo!", "RED") + "=> Maxwell ficou sem Moedas de Transporte");
             System.exit(0);
         }
     }
@@ -192,6 +177,7 @@ public class Game {
             int optionInputed = menu.requestInputNumber(options);
 
             if (optionInputed == 1) {
+                
                 // Accept mission
                 if (!this.maxwell.isOnMission()) {
                     acceptMission(currentCity);

@@ -103,6 +103,9 @@ public class Menu {
         for (int i = 0; i < frontiers.size(); i++) {
             System.out.println((i + 1) +  "- " + frontiers.get(i).getDestination().getName() + " | Ganho de Poder => " + frontiers.get(i).getPower());
         }
+
+        System.out.println(" ");
+        System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
     }
 
     // Option menu the player receive when arriving in a city with misson
@@ -234,6 +237,19 @@ public class Menu {
                 System.out.println(merchantText + " Você perdeu " + textWithColor("2 Moedas de Transporte ", "RED") + "e ganhou " + textWithColor("2 de Limiar de Poder", "GREEN"));
                 System.out.println(" ");
                 break;
+        }
+    }
+
+    public void ariveAtNargumunMessage(int currentTravelCoins) {
+        if (currentTravelCoins < 4) {
+            System.out.println(textWithColor("Fim de jogo! ", "RED"));
+            System.out.println("=> Maxwell chegou em Nargumun, mas foi alocado como" + textWithColor("SERVO DA COROA", "RED"));
+        } else if (currentTravelCoins >= 4 && currentTravelCoins <= 10) {
+            System.out.println(textWithColor("JOGO CONCLUIDO !!!", "GREEN"));
+            System.out.println("Maxwell chegou em Nargumun e foi condecorado " + textWithColor("LORDE", "GREEN"));
+        } else if (currentTravelCoins > 10) {
+            System.out.println(textWithColor("JOGO CONCLUIDO !!!", "GREEN"));
+            System.out.println("Maxwell chegou em Nargumun e foi condecorado " + textWithColor("REI DE NARGUMUN", "GREEN"));
         }
     }
 }
