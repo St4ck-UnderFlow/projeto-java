@@ -88,16 +88,17 @@ public class Game {
             
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
-            
             updatedMaxwellInfosWhenAriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
-            
+
             checkGameOver();
-            checkMission(this.maxwell.getCurrentCity());
 
             // Asks from Merchant
             Merchant merchant = this.maxwell.getCurrentCity().getMerchant();
             StringBuilder answears = merchant.askQuestions();
-            merchant.giveReward(answears);
+            merchant.giveReward(answears, this.maxwell);
+
+            checkMission(this.maxwell.getCurrentCity());
+
 
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
