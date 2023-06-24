@@ -192,6 +192,7 @@ public class Menu {
     }
 
     public void merchantFirstQuestion() {
+        System.out.println(" ");
         System.out.println("==================================================");
         System.out.println(merchantText + " Quantas moedas de transporte você tem?");
         System.out.println("==================================================");
@@ -200,6 +201,7 @@ public class Menu {
     }
 
     public void merchantSecondQuestion() {
+        System.out.println(" ");
         System.out.println("==================================================");
         System.out.println(merchantText + " Quer trocar moeda por poder?");
         System.out.println("==================================================");
