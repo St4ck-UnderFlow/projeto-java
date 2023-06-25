@@ -1,4 +1,4 @@
-# Documentação Do Código
+# Documentação Do Código (Classes)
 
 ## Main 🏴󠁩󠁤󠁪󠁷󠁿
 - Local onde o jogo é executado
@@ -119,5 +119,11 @@ Se Maxwell estiver em uma missão, o método verifica se a cidade alvo da missã
     - travelCoins = 3; 
     - onMission = false;
 
-
-
+## Merchant
+- Classe responsável por representar cada Mercador do jogo.
+- Nessa classe utilizando a biblioteca TreeMap do Java para contruir uma árvore binária para o sistema de resompensas para o usuário
+- [x] ```Merchant()```: O contrutor é responsável por executar o método ```createTreeMap()```
+- [x] ```createTreeMap()```: Responsável por criar um objeto TreeMap chamado "rewards" e preenche-o com pares chave-valor. As chaves são strings "00", "01", "10" e "11", e os valores correspondentes são "R1", "R2", "R3" e "R4", respectivamente. O TreeMap é uma estrutura de dados em que os elementos são armazenados em uma ordem classificada de acordo com as chaves. Isso permite que os elementos sejam acessados ​​e percorridos de forma eficiente com base na ordem das chaves.
+- [x] ```reward()```: Esse método atribui recompensas com base nas respostas fornecidas.
+Ele verifica a resposta e executa a lógica correspondente. As recompensas podem alterar o número de moedas de viagem e o limiar atual. Se a resposta não corresponder a uma recompensa válida, uma mensagem de erro é exibida. Se não houver recompensa correspondente, uma exceção é lançada.
+- [x] ```askQuestions()()```: Esse método solicita ao usuário que responda a duas perguntas.As responstas são transformadas em 0 (esquerda) ou 1 (direita) para ser usada com o TreeMap. Se ocorrer uma exceção de tipo "InputMismatchException", uma mensagem de erro é exibida e o usuário é solicitado a fornecer uma entrada válida. O processo se repete até que as respostas sejam fornecidas corretamente. Finalmente, o objeto StringBuilder contendo as respostas é retornado.
