@@ -102,4 +102,22 @@ Se Maxwell estiver em uma missão, o método verifica se a cidade alvo da missã
 - [x] ```acceptMission()```: Essa função é responsavel por definir a missão de cidade que Maxwell aceitou como sua atual, por meio do método ```setCurrentMission()```, e ao fazer isso puxa o metodo ```updateTravelCoinsWhenAcceptMission()``` para atualizar as moedas de transporte de Maxwell.
 - [x] ```wantsChangeCurrentMission()```:Essa função solicita a confirmação do jogador para trocar a missão atual de Maxwell. Ele exibe um menu de confirmação e aguarda a entrada do jogador para decidir se deseja ou não trocar a missão atual, retornando um valor booleano com base na escolha do jogador. Esse método é utilizado em conjunto com outro método, ```checkMission()```, para determinar se o jogador deseja trocar sua missão atual.
 
-##
+## Maxwell 🧍
+- Classe responsavel pelo viajante Maxwell e seus atributos
+    - Atributos:
+        - int travelCoins
+        - int power
+        - Mission currentMisson
+        - City currentCity
+        - String goal
+        - int currentThreshold
+        - boolean onMission
+- O construtor de Maxwell, ```Maxwell()```, serve para definir algumas informações fixas e outras que variam, em certas situações, tais como: 
+    - goal = "Chegar até a cidade de Nargumun e NÃO ser alocado como Servo"; 
+    - power = 0; 
+    - currentThreshold = 7; 
+    - travelCoins = 3; 
+    - onMission = false;
+
+
+
