@@ -1,7 +1,5 @@
 package classes;
 
-import java.util.ArrayList;
-
 public class Map {
     public City ubud = new City("Ubud", false, null, 0);
 
@@ -37,10 +35,9 @@ public class Map {
 
     public City kasya = new City("Principality of Kasya", false, null, -7);
 
-    public ArrayList<City> cities;
+   
 
-    public Map() {
-        this.cities = new ArrayList<>();
+    public Map() { 
         setFrontiers();
         setMissionsToCities();
     }
