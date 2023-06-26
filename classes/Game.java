@@ -139,7 +139,7 @@ public class Game {
         City currentCity = this.maxwell.getCurrentCity();
 
         if (currentPower > currentThreshold) {
-            menu.textWithColor("Fim de jogo! => Limiar máximo ultrapassado", "RED");
+            System.out.println(menu.textWithColor("Fim de jogo!", "RED") + " => Limiar máximo ultrapassado"); 
             System.exit(0);               
         } 
         
@@ -149,7 +149,7 @@ public class Game {
         }
 
         if (currentTravelCoins < 0) {
-            System.out.println(menu.textWithColor("Fim de jogo!", "RED") + "=> Maxwell ficou sem Moedas de Transporte");
+            System.out.println(menu.textWithColor("Fim de jogo!", "RED") + " => Maxwell ficou sem Moedas de Transporte");
             System.exit(0);
         }
     }
