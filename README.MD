@@ -1,5 +1,4 @@
-# Documentação Do Código (Classes)
-
+# Documentação Do Código
 ## Main 🏴󠁩󠁤󠁪󠁷󠁿
 - Local onde o jogo é executado
 - São instanciandos as classes ```Menu.java``` e ```Game.java```
