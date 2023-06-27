@@ -93,7 +93,7 @@ public class Game {
 
             // Asks from Merchant
             Merchant merchant = this.maxwell.getCurrentCity().getMerchant();
-            StringBuilder answears = merchant.askQuestions();
+            StringBuilder answears = merchant.askQuestions(this.maxwell, map.ubud);
             merchant.giveReward(answears, this.maxwell);
 
             checkMission(this.maxwell.getCurrentCity());

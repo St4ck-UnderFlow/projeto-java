@@ -69,4 +69,14 @@ public class Maxwell {
         this.onMission = onMission;
     }
 
+    public void merchantPunishmentWhenPlayerLies(City ubud) {
+        // When player lies to the Merchant, he'll receive this punishment
+        setCurrentCity(ubud);
+        setCurrentThreshold(7);
+        setPower(4);
+        setTravelCoins(4);
+        setOnMission(false);
+        setCurrentMisson(null);
+    }
+
 }

@@ -61,12 +61,13 @@ public class Merchant {
                 }
             } else {
                 System.out.println(" ");
-                System.out.println("Não há recompensa correspondente para as respostas fornecidas.");
+                System.out.println(merchantText + menu.textWithColor(" VOCÊ NÃO ESTÁ PERMITIDO À MENTIR PARA MIM", "RED"));
+                System.out.println(menu.textWithColor("Você retornou para Ubud e suas informações foram atulizadas", "YELLOW"));
                 throw new InputMismatchException(null);
             }
     }
     
-    public StringBuilder askQuestions() {
+    public StringBuilder askQuestions(Maxwell maxwell, City ubub) {
         Scanner input = new Scanner(System.in);
         
         while(true) {
@@ -77,11 +78,15 @@ public class Merchant {
                 menu.merchantSecondQuestion();
                 int answear2 = input.nextInt();
 
-                if (answear1 >= 5) {
+
+                if (answear1 != maxwell.getTravelCoins() + 1) {
+                    maxwell.merchantPunishmentWhenPlayerLies(ubub);
+                } else if (answear1 >= 5) {
                     answear1 = 1;
                 } else {
                     answear1 = 0;
                 }
+
 
                 if (answear2 != 0 && answear2 != 1) {
                     throw new InputMismatchException(null);
