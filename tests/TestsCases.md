@@ -22,6 +22,7 @@
 
 - [x] When the player accept the mission, have to show the rewards: reward for accepting the mission and completion
 - [x] When reaching the objective of the mission, she has to complete
+- [ ] When player arrives on a city with a mission and he currently has one, there must be given a choice to change missions or to refuse the mission of the current city
 - [ ] When player arrives on a new city, he has to interact with the Merchant
 - [ ] When player finish to answer the Merchant's questions, he has to recive the appropriate reward
 - [ ] When player lies to the Merchant, he must receive a punishment
