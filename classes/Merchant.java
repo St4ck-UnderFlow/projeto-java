@@ -37,13 +37,22 @@ public class Merchant {
                     case "R2":
                         maxwell.setTravelCoins(currentTravelCoins - 1);
                         maxwell.setCurrentThreshold(currentThreshold + 2);
+                        if (maxwell.getTravelCoins() < 0) {
+                            maxwell.setTravelCoins(0);
+                        }
                         break;
                     case "R3":
                         maxwell.setTravelCoins(currentTravelCoins - 2);
+                        if (maxwell.getTravelCoins() < 0) {
+                            maxwell.setTravelCoins(0);
+                        }
                         break;
                     case "R4":
                         maxwell.setTravelCoins(currentTravelCoins - 2);
                         maxwell.setCurrentThreshold(currentThreshold + 2);
+                        if (maxwell.getTravelCoins() < 0) {
+                            maxwell.setTravelCoins(0);
+                        }
                         break;
                     default:
                         System.out.println(" ");
