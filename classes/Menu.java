@@ -24,6 +24,10 @@ public class Menu {
         System.out.println("");
         System.out.println(" => Em algumas cidades que você passar, terá que tomar decisões (aceitar ou recusar missões) pelo caminho.");
         System.out.println("");
+        System.out.println(" => Toda cidade vai ter um mercador que dependendo das respostas do jogador pode ajudar ou atrapalhar sua jornada.");
+        System.out.println("");
+        System.out.println(" => Maxwell pode mentir para o mercador, por sua conta em risco .....");
+        System.out.println("");
         System.out.println(" => Maxwell deverá caminhar por toda a viagem obrigando-se a pensar sabiamente qual será sua proxima cidade.");
         System.out.println("");
         System.out.println(" => Ele deverá tomar cuidado com o acumulo de poder da joia, pois poderá trazer consequências terriveis (se ultrapassar o Limiar Maximo, Maxwell morrerá).");

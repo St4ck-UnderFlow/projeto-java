@@ -26,34 +26,34 @@ public class City {
     public Merchant getMerchant() {
         return merchant;
     }
-
-    // Create a new border that connects two cities
-    public void addFrontier(City city, int powerUp) {
-        Frontier frontier = new Frontier(city, powerUp);
-        this.frontiers.add(frontier);
-    }
-
+ 
     public ArrayList<Frontier> getFrontiers() {
         return frontiers;
     }
-
+    
     public int getPowerUp() {
         return powerUp;
     }
-
+    
     public Mission getMission() {
         return mission;
     }
-
+    
     public void setMission(Mission mission) {
         this.mission = mission;
     }
-
+    
+    // Makes it impossible for the player to get the missions he already completed or abandoned again
     public void blockGetMissionAgain() {
         if(this.hasMission) {
             setMission(null);
             hasMission = false;
         }
     }
-
+    
+    // Create a new border that connects two cities
+    public void addFrontier(City city, int powerUp) {
+        Frontier frontier = new Frontier(city, powerUp);
+        this.frontiers.add(frontier);
+    }
 }
