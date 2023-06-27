@@ -18,7 +18,14 @@
 - [x] When travel to a city with a mission avaliable, must have the options: accept or reject the mission
 - [x] When the player accept the mission, have to be possible to cancel the mission any time
 - [x] When the amount of power override the threshold, the game must be finished
-- [x] When the player cancel the mission and return to the city of the mission, the mission shouldn't be avaliable anymore
+- [x] When the player cancel or complete the mission and return to the city of the mission, the mission shouldn't be avaliable anymore
 
 - [x] When the player accept the mission, have to show the rewards: reward for accepting the mission and completion
 - [x] When reaching the objective of the mission, she has to complete
+- [ ] When player arrives on a new city, he has to interact with the Merchant
+- [ ] When player finish to answer the Merchant's questions, he has to recive the appropriate reward
+- [ ] When player lies to the Merchant, he must receive a punishment
+- [ ] When player arrives at Nargumun, the game must finish
+- [ ] If player arrives at Nargumun with less than 4 travel coins, he must become a SERVENT
+- [ ] If player arrives at Nargumun with more or equal 4 and less or equal than 10 travel coins, he must become a LORD
+- [ ] If player arrives at Nargumun with more than 10 travel coins, he must become the KING OF NARGUMUM
