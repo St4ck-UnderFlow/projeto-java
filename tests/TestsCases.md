@@ -26,6 +26,7 @@
 - [ ] When player arrives on a new city, he has to interact with the Merchant
 - [ ] When player finish to answer the Merchant's questions, he has to recive the appropriate reward
 - [ ] When player lies to the Merchant, he must receive a punishment
+- [ ] When the player accepts the Vunese Empire's mission, that needs him to return to Ubud, if the player tries to lie to the Merchant so that he returns to Ubud to recieve the rewards of the mission without having to travel ALL the way back, he shoudn't be able to recieve said rewards 
 - [ ] When player arrives at Nargumun, the game must finish
 - [ ] If player arrives at Nargumun with less than 4 travel coins, he must become a SERVENT
 - [ ] If player arrives at Nargumun with more or equal 4 and less or equal than 10 travel coins, he must become a LORD
