@@ -24,7 +24,7 @@
         - [x] ```setFrontiers()```: Responsável por configurar as fronterias e o poder ao chegar em cada cidade do jogo. Essa configuração é feita através da chamada o método ```addFrontier()``` em cada cidade/atributo do mapa.
         - [x] ```setMissionsToCities()```: Responsável por configurar as missões nas cidades Kalb, Defalsia e Vunese Empire. Essa configuração é feita através da criação de 3 instâncias da classe ```Mission.java```. Após isso, por meio da chamada do método ```setMission()``` de cada cidade é passado como parâmetro um das instâncias criadas.
 
-![map-colored](./assets/map.png)
+![map](./assets/map.png)
 
 
 ## City 📌
@@ -126,3 +126,5 @@ Se Maxwell estiver em uma missão, o método verifica se a cidade alvo da missã
 - [x] ```reward()```: Esse método atribui recompensas com base nas respostas fornecidas.
 Ele verifica a resposta e executa a lógica correspondente. As recompensas podem alterar o número de moedas de viagem e o limiar atual. Se a resposta não corresponder a uma recompensa válida, uma mensagem de erro é exibida. Se não houver recompensa correspondente, uma exceção é lançada.
 - [x] ```askQuestions()()```: Esse método solicita ao usuário que responda a duas perguntas.As responstas são transformadas em 0 (esquerda) ou 1 (direita) para ser usada com o TreeMap. Se ocorrer uma exceção de tipo "InputMismatchException", uma mensagem de erro é exibida e o usuário é solicitado a fornecer uma entrada válida. O processo se repete até que as respostas sejam fornecidas corretamente. Finalmente, o objeto StringBuilder contendo as respostas é retornado.
+
+![merchant-tree](./assets/merchantTree.png)
