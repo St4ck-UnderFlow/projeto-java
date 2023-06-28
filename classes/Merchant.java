@@ -22,6 +22,7 @@ public class Merchant {
     }
 
     public void giveReward(StringBuilder answears, Maxwell maxwell) {
+        // Generate a binary answear, Ex: 01 (left and right)
         String answearFormated = this.rewards.get(answears.toString());
 
         if (answearFormated != null) {
@@ -32,9 +33,11 @@ public class Merchant {
                 menu.rewardMessage(answearFormated);
                 switch (answearFormated) {
                     case "R1":
+                        // binary answear: 00
                         maxwell.setTravelCoins(currentTravelCoins + 2);
                         break;
                     case "R2":
+                        // binary answear: 01
                         maxwell.setTravelCoins(currentTravelCoins - 1);
                         maxwell.setCurrentThreshold(currentThreshold + 2);
                         if (maxwell.getTravelCoins() < 0) {
@@ -42,12 +45,14 @@ public class Merchant {
                         }
                         break;
                     case "R3":
+                        // binary answear: 10
                         maxwell.setTravelCoins(currentTravelCoins - 2);
                         if (maxwell.getTravelCoins() < 0) {
                             maxwell.setTravelCoins(0);
                         }
                         break;
                     case "R4":
+                        // binary answear: 11
                         maxwell.setTravelCoins(currentTravelCoins - 2);
                         maxwell.setCurrentThreshold(currentThreshold + 2);
                         if (maxwell.getTravelCoins() < 0) {
