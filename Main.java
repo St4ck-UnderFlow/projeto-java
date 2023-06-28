@@ -10,9 +10,9 @@ public class Main {
         Game game = new Game();
     
         ArrayList<Number> options= new ArrayList<Number>();
-        options.add(0, 1);
-        options.add(0, 2);
-        options.add(0, 3);
+        options.add(0, 1); // "Play the Game" option 
+        options.add(0, 2); // "About the Game" option
+        options.add(0, 3); // "Leave" option
 
         menu.clearTerminal();
 
@@ -22,17 +22,14 @@ public class Main {
 
             switch(option) {
                 case 1:
-                    // "Play the Game" option
                     menu.clearTerminal();
-                    game.run();
+                    game.startGame();
                     break;
                 case 2:
-                    // "About" option
                     menu.clearTerminal();
                     menu.aboutGameMenu();
                     break;
                 case 3:
-                    // "Leave" option
                     menu.clearTerminal();
                     System.out.println("JÁ DESISTIU ???");
                     System.exit(0);

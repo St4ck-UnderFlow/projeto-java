@@ -19,23 +19,23 @@ public class Menu {
 
     public void aboutGameMenu() {
         System.out.println(" => Maxwell é um viajante que mora em Ubud, ele tem o objetivo de levar uma joiá do poder para Nargumun.");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => No caminho você deve acumular o maior número possivel de moedas para poder receber uma recompensa em Nargumun (dependendo da quantidade a recompensa muda).");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => Em algumas cidades que você passar, terá que tomar decisões (aceitar ou recusar missões) pelo caminho.");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => Toda cidade vai ter um mercador que dependendo das respostas do jogador pode ajudar ou atrapalhar sua jornada.");
-        System.out.println("");
-        System.out.println(" => Maxwell pode mentir para o mercador, por sua conta em risco .....");
-        System.out.println("");
+        System.out.println(" ");
+        System.out.println(" => Maxwell pode mentir para o mercador, mas podem haver consequências .....");
+        System.out.println(" ");
         System.out.println(" => Maxwell deverá caminhar por toda a viagem obrigando-se a pensar sabiamente qual será sua proxima cidade.");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => Ele deverá tomar cuidado com o acumulo de poder da joia, pois poderá trazer consequências terriveis (se ultrapassar o Limiar Maximo, Maxwell morrerá).");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => Max poderá receber ajuda para melhorar o controle de poder da joia, podendo 'roubar' as recompensas e abandonar as missões ou ser honesto e concluir as missões para melhorar as recompensas finais.");
-        System.out.println("");
+        System.out.println(" ");
         System.out.println(" => Tome suas decisões sabiamente, pois uma missão abandonada não poderá ser recuperada e a quantidade de missões que se pode ter por vez é apenas uma");
-        System.out.println("");
+        System.out.println(" ");
     }
 
     // Function that clears the terminal
@@ -112,7 +112,7 @@ public class Menu {
         System.out.println("<< PARA QUAL CIDADE DESEJA VIAJAR ?");
     }
 
-    // Option menu the player receive when arriving in a city with misson
+    // Option menu the player receive when arriving in a city with mission
     public void acceptMissionMenu(Mission mission) {
         
         String missionGoal = mission.getGoal();
@@ -135,6 +135,7 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
  
+    // Change one mission for another option
     public void changeMissionsConfirmation() {
         System.out.println(" ");
         System.out.println("===========================================");
@@ -147,6 +148,7 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
 
+    // Default Menu when the player has a mission
     public void onMissionMenu(Maxwell maxwell) {
 
         String cityName = maxwell.getCurrentCity().getName();
@@ -170,6 +172,7 @@ public class Menu {
         System.out.println("<< ESCOLHA A OPÇÃO DESEJADA >>");
     }
 
+    // Option to show the correct menu
     public void showMenu(Maxwell maxwell) {
         if (maxwell.isOnMission()) {
             onMissionMenu(maxwell);
@@ -178,6 +181,7 @@ public class Menu {
         }
     }
 
+    // Option to filter the user answears to the system
     public int requestInputNumber(ArrayList<Number> options) {
         Scanner input = new Scanner(System.in);
         int option = 0;
@@ -219,6 +223,7 @@ public class Menu {
         System.out.println("<< SELECIONE A OPÇÃO DESEJADA >>");
     }
 
+    // Reward given to the player depending on the Merchant answears
     public void rewardMessage(String answearFormated) {
         switch(answearFormated) {
             case "R1":
@@ -244,7 +249,7 @@ public class Menu {
         }
     }
 
-    public void ariveAtNargumunMessage(int currentTravelCoins) {
+    public void arriveAtNargumunMessage(int currentTravelCoins) {
         if (currentTravelCoins < 4) {
             System.out.println(textWithColor("Fim de jogo! ", "RED"));
             System.out.println("=> Maxwell chegou em Nargumun, mas foi alocado como" + textWithColor("SERVO DA COROA", "RED"));

@@ -10,10 +10,10 @@ public class Maxwell {
     private boolean onMission;
 
     public Maxwell() {
-        this.goal = "Chegar até a cidade de Nargumun e NÃO ser alocado como Servo"; // The Main Objective of Maxwell's Journey
-        this.power = 0; // The power Maxwell has currently (if this exceeds the currentThreshold, he dies)
-        this.currentThreshold = 7; // The current threshold of Maxwell, it may change during his journey 
-        this.travelCoins = 3; // Amount of coins Maxwell currently holds (he starts with 3 coins)
+        this.goal = "Chegar até a cidade de Nargumun e NÃO ser alocado como Servo";
+        this.power = 0;
+        this.currentThreshold = 7;
+        this.travelCoins = 3;
         this.onMission = false;
     }
 
@@ -69,8 +69,8 @@ public class Maxwell {
         this.onMission = onMission;
     }
 
+    // When player lies to the Merchant, he'll receive this punishment
     public void merchantPunishmentWhenPlayerLies(City ubud) {
-        // When player lies to the Merchant, he'll receive this punishment
         setCurrentCity(ubud);
         setCurrentThreshold(7);
         setPower(4);

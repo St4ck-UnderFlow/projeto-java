@@ -35,7 +35,6 @@ public class Map {
 
     public City kasya = new City("Principality of Kasya", false, null, -7);
 
-   
 
     public Map() { 
         setFrontiers();
@@ -44,45 +43,45 @@ public class Map {
 
     public void setFrontiers() {
         
-        // Frontiers Ubud
+        // Frontiers of Ubud
         this.ubud.addFrontier(this.legmod, 2);
         this.ubud.addFrontier(this.nekika, 1);
 
-        // Frontiers Nekika
+        // Frontiers of Nekika
         this.nekika.addFrontier(this.legmod, 2);
         this.nekika.addFrontier(this.gritestar, 5);
         this.nekika.addFrontier(this.ubud, 0);
 
-        // Frontiers Legmod
+        // Frontiers of Legmod
         this.legmod.addFrontier(this.ubud, 0);
         this.legmod.addFrontier(this.nekika, 1);
         this.legmod.addFrontier(this.gritestar, 5);
         this.legmod.addFrontier(this.drogove, 3);
         this.legmod.addFrontier(this.oldcalia, 4);
 
-        // Frontiers Gritestar
+        // Frontiers of Gritestar
         this.gritestar.addFrontier(this.nekika, 1);
         this.gritestar.addFrontier(this.drogove, 3);
         this.gritestar.addFrontier(this.legmod, 2);
         this.gritestar.addFrontier(this.lastwatch, -2);
 
-        // Frontiers Drogove
+        // Frontiers of Drogove
         this.drogove.addFrontier(this.legmod, 2);
         this.drogove.addFrontier(this.gritestar, 5);
         this.drogove.addFrontier(this.lastwatch, -2);
         this.drogove.addFrontier(this.oldcalia, 4);
 
-        // Frontiers LastWatch
+        // Frontiers of LastWatch
         this.lastwatch.addFrontier(this.gritestar, 5);
         this.lastwatch.addFrontier(this.drogove, 3);
         this.lastwatch.addFrontier(this.smalia, 1);
         this.lastwatch.addFrontier(this.oldcalia, 4);
 
-        // Frontiers Smalia
+        // Frontiers of Smalia
         this.smalia.addFrontier(this.lastwatch, -2);
         this.smalia.addFrontier(this.oldcalia, 4);
 
-        // Frontiers OldCalia
+        // Frontiers of OldCalia
         this.oldcalia.addFrontier(this.smalia, 1);
         this.oldcalia.addFrontier(this.drogove, 3);
         this.oldcalia.addFrontier(this.legmod, 2);
@@ -91,16 +90,16 @@ public class Map {
         this.oldcalia.addFrontier(this.kalb, 2);
         this.oldcalia.addFrontier(this.lastwatch, -2);
 
-        // Frontiers Defalsia
+        // Frontiers of Defalsia
         this.defalsia.addFrontier(this.aymarLeague, 1);
         this.defalsia.addFrontier(this.oldcalia, 4);
 
-        // Frontiers Kalb
+        // Frontiers of Kalb
         this.kalb.addFrontier(this.oldcalia, 4);
         this.kalb.addFrontier(this.aymarLeague, 1);
         this.kalb.addFrontier(this.vuneseEmpire, 0);
 
-        // Frontiers Aymar League
+        // Frontiers of Aymar League
         this.aymarLeague.addFrontier(this.defalsia, -3);
         this.aymarLeague.addFrontier(this.oldcalia, 4);
         this.aymarLeague.addFrontier(this.kalb, 2);
@@ -110,36 +109,37 @@ public class Map {
         this.aymarLeague.addFrontier(this.nargumun, 0);
         this.aymarLeague.addFrontier(this.karhora, -2);
 
-        // Frontiers Vunese Empire
+        // Frontiers of Vunese Empire
         this.vuneseEmpire.addFrontier(this.aymarLeague, 1);
         this.vuneseEmpire.addFrontier(this.kalb, 2);
         this.vuneseEmpire.addFrontier(this.chandirSultanate, 1);
 
-        // Frontiers Karhora
+        // Frontiers of Karhora
         this.karhora.addFrontier(this.aymarLeague, 1);
         this.karhora.addFrontier(this.nargumun, 0);
 
-        // FrontiersNargumun
+        // Frontiers of Nargumun
         this.nargumun.addFrontier(this.karhora, -2);
         this.nargumun.addFrontier(this.aymarLeague, 1);
         this.nargumun.addFrontier(this.bun, 5);
 
-        // Frontiers Bun
+        // Frontiers of Bun
         this.bun.addFrontier(this.nargumun, 0);
         this.bun.addFrontier(this.aymarLeague, 1);
         this.bun.addFrontier(this.chandirSultanate, 1);
 
-        // Frontiers Chandir Sultanate
+        // Frontiers of Chandir Sultanate
         this.chandirSultanate.addFrontier(this.vuneseEmpire, 0);
         this.chandirSultanate.addFrontier(this.aymarLeague, 1);
         this.chandirSultanate.addFrontier(this.bun, 5);
         this.chandirSultanate.addFrontier(this.kasya, -7);
 
-        // Frontier Kasya
+        // Frontier of Kasya
         this.kasya.addFrontier(this.chandirSultanate, 1);
         
     }
 
+    // Sets missions on the wanted cities
     public void setMissionsToCities() {
         Mission kalbMission = new Mission(4, 2, 2, "Vá para a cidade de Grand Duchy of Smalia e receba as Luvas Do Poder !!!!", smalia);
 

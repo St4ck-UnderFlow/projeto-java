@@ -16,36 +16,36 @@ public class Game {
         this.maxwell.setCurrentCity(map.ubud);
     }
 
-    // Function that runs the menu of Maxwell
-    public void run() {
+    // Function that runs the main menu 
+    public void startGame() {
         while (true) {
             menu.showMenu(this.maxwell);
 
+            // Menu with mission
             if (this.maxwell.isOnMission()) {
                 ArrayList<Number> options= new ArrayList<Number>();
-                options.add(0, 1);
-                options.add(0, 2);
-                options.add(0, 3);
+                options.add(0, 1); // Travel
+                options.add(0, 2); // Exit
+                options.add(0, 3); // Abort Current Mission
                 int optionInputed = menu.requestInputNumber(options);
 
                 if (optionInputed == 1) {
-                    // Travel mission
                     menu.clearTerminal();
                     travel();
                 } else if (optionInputed == 2) {
-                    // Exit option
                     System.exit(0);
                 } else if (optionInputed == 3) {
-                    // Abort mission option
                     abortCurrentMission();
                 } else {
                     menu.clearTerminal();
                     System.out.println("Opção inválida");
                 }
+            
+            // Menu without mission
             } else {
                 ArrayList<Number> options= new ArrayList<Number>();
-                options.add(0, 1);
-                options.add(0, 2);
+                options.add(0, 1); // Travel
+                options.add(0, 2); // Exit
                 int optionInputed = menu.requestInputNumber(options);
             
                 if (optionInputed == 1) {
@@ -74,20 +74,17 @@ public class Game {
             int currentTravelCoins = this.maxwell.getTravelCoins();
             int currentThreshold = this.maxwell.getCurrentThreshold();
 
-            // Check if the current city misison is already accepeted/completed
-            currentCity.blockGetMissionAgain();
-            
             // Shows the Menu to travel from one city to another
             ArrayList<Frontier> frontiers = this.maxwell.getCurrentCity().getFrontiers();
             menu.travelMenu(frontiers, currentCity, currentPower, currentTravelCoins, currentThreshold);
-    
+            
             // Ask which city the player wants to go and travels to it
             int cityIndexChoiceInput = input.nextInt();
             Frontier frontierChoosen = frontiers.get(cityIndexChoiceInput - 1);
 
             // Update Maxwell's infos
             this.maxwell.setCurrentCity(frontierChoosen.getDestination());
-            updatedMaxwellInfosWhenAriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
+            updatedMaxwellInfosWhenArriveOnCity(this.maxwell.getCurrentCity().getPowerUp(), this.maxwell.getTravelCoins());
 
             checkGameOver();
 
@@ -95,8 +92,9 @@ public class Game {
             Merchant merchant = this.maxwell.getCurrentCity().getMerchant();
             StringBuilder answears = merchant.askQuestions(this.maxwell, map.ubud);
             merchant.giveReward(answears, this.maxwell);
-
+            
             checkMission(this.maxwell.getCurrentCity());
+            currentCity.blockGetMissionAgain();
 
         } catch (IndexOutOfBoundsException error) {
             System.out.println("NORIET ... Tente um valor de fronteira valido");
@@ -106,20 +104,20 @@ public class Game {
     }
 
     // Updates Maxwell's power and travel coins
-    public void updatedMaxwellInfosWhenAriveOnCity(int power, int travelCoins) {
+    public void updatedMaxwellInfosWhenArriveOnCity(int power, int travelCoins) {
 
-        // Update current power of Maxwell 
         int currentPower = this.maxwell.getPower();
         int currentPowerUptaded = currentPower + power;
-
+        int currentTravelCoins = this.maxwell.getTravelCoins();
+        
+        // Update power 
         if (currentPowerUptaded < 0) {
             this.maxwell.setPower(0);
         } else {
             this.maxwell.setPower(currentPower + power);
         } 
     
-        // Update travel coins of Maxwell
-        int currentTravelCoins = this.maxwell.getTravelCoins();
+        // Update travel coins 
         this.maxwell.setTravelCoins(currentTravelCoins - 1);
     }
 
@@ -138,16 +136,19 @@ public class Game {
 
         City currentCity = this.maxwell.getCurrentCity();
 
+        // Power exceeds the Threshold
         if (currentPower > currentThreshold) {
             System.out.println(menu.textWithColor("Fim de jogo!", "RED") + " => Limiar máximo ultrapassado"); 
             System.exit(0);               
         } 
         
+        // Arrives at Nargumun
         if (currentCity.getName() == "Nargumun") {
-            menu.ariveAtNargumunMessage(currentTravelCoins);
+            menu.arriveAtNargumunMessage(currentTravelCoins);
             System.exit(0);  
         }
 
+        // Out of Travel Coins
         if (currentTravelCoins < 0) {
             System.out.println(menu.textWithColor("Fim de jogo!", "RED") + " => Maxwell ficou sem Moedas de Transporte");
             System.exit(0);
@@ -157,28 +158,29 @@ public class Game {
     // Options related to change, accept, reject or abort a mission
     public void checkMission(City currentCity) {
        
+        // Completes mission when arrives on the target City
         if (this.maxwell.isOnMission()) {
+
             Mission currentMission = this.maxwell.getCurrentMisson();
             if (currentMission.getCityTarget() == currentCity) {
-                // When Maxwell arives at target City of his current mission
                 menu.clearTerminal();
                 currentMission.complete(maxwell);
             }
         }
 
+        // Accept/Reject/Change mission menu
         if (currentCity.hasMission) {
             
             menu.acceptMissionMenu(currentCity.getMission());
 
             ArrayList<Number> options= new ArrayList<Number>();
-            options.add(0, 1);
-            options.add(0, 2);
+            options.add(0, 1); //Accept
+            options.add(0, 2); //Reject
 
             int optionInputed = menu.requestInputNumber(options);
 
             if (optionInputed == 1) {
                 
-                // Accept mission
                 if (!this.maxwell.isOnMission()) {
                     acceptMission(currentCity);
                 }
@@ -194,9 +196,7 @@ public class Game {
             } else {
                 System.out.println("Opção inválida");
             }   
-
         } 
-    
     }
 
     // Function for aborting the current mission
@@ -216,10 +216,11 @@ public class Game {
         System.out.println("<< Missao foi aceita >>");
         System.out.println(" ");
     
+        // Mission accepted
         this.maxwell.setOnMission(true);
         this.maxwell.setCurrentMisson(maxwellCity.getMission());
     
-        // update Maxwell's travel coins 
+        // Update Travel Coins 
         int travelCoinsToAccept = currentCity.getMission().getTravelCoinsToAccept();
         updateTravelCoinsWhenAcceptMission(travelCoinsToAccept);
 
@@ -235,11 +236,11 @@ public class Game {
             this.menu.changeMissionsConfirmation();
 
             ArrayList<Number> options= new ArrayList<Number>();
-            options.add(0, 1);
-            options.add(0, 2);
+            options.add(0, 1); // Want to change
+            options.add(0, 2); // Doesn't want to change
 
             int optionInputed = menu.requestInputNumber(options);
-
+            
             if (optionInputed == 1) {
                 wantChange = true;
                 break;
