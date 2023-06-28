@@ -67,7 +67,7 @@ public class Merchant {
             } else {
                 System.out.println(" ");
                 System.out.println(merchantText + menu.textWithColor(" VOCÊ NÃO ESTÁ PERMITIDO À MENTIR PARA MIM", "RED"));
-                System.out.println(menu.textWithColor("Você retornou para Ubud e suas informações foram atulizadas", "YELLOW"));
+                System.out.println(menu.textWithColor("Você retornou para Ubud e suas informações foram atualizadas", "YELLOW"));
                 throw new InputMismatchException(null);
             }
     }
